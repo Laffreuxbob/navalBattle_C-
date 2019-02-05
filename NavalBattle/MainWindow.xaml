@@ -28,7 +28,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
-                        <TextBlock x:Name="class1Data" HorizontalAlignment="Left" TextWrapping="NoWrap" Text="{Binding Data}" VerticalAlignment="Center" Padding="10,0,0,0"/>
+                        <TextBlock x:Name="boatPlayeur" HorizontalAlignment="Left" TextWrapping="NoWrap" Text="{Binding InfoBoat}" VerticalAlignment="Center" Padding="10,0,0,0"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -48,7 +48,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
-                        <TextBlock x:Name="class1Data" HorizontalAlignment="Left" TextWrapping="NoWrap" Text="{Binding Data}" VerticalAlignment="Center" Padding="10,0,0,0"/>
+                        <TextBlock x:Name="boatVersus" HorizontalAlignment="Right" TextWrapping="NoWrap" Text="{Binding InfoBoat}" VerticalAlignment="Center" Padding="10,0,0,0"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
