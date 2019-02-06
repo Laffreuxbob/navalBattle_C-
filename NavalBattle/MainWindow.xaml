@@ -5,8 +5,53 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NavalBattle"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="900" Width="1500">
     <Grid>
+        <!-- Définition des proportions de la fenêtre -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2.5*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         
+        <!-- Volet gauche -->
+        <ListView x:Name="configPlayeur" Margin="0"
+            Grid.Column="0" Grid.Row="0">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical"></StackPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock x:Name="boatPlayeur" HorizontalAlignment="Left" TextWrapping="NoWrap" Text="{Binding InfoBoat}" VerticalAlignment="Center" Padding="10,0,0,0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <!-- Table de jeu -->
+        <Grid>
+
+        </Grid>
+        <!-- Volet droit -->
+        <ListView x:Name="configVersus" Margin="0"
+            Grid.Column="2" Grid.Row="0">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical"></StackPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock x:Name="boatVersus" HorizontalAlignment="Right" TextWrapping="NoWrap" Text="{Binding InfoBoat}" VerticalAlignment="Center" Padding="10,0,0,0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Window>
