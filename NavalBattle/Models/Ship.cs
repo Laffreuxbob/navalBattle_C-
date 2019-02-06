@@ -73,9 +73,6 @@ namespace NavalBattle.Models
             get { return picturePath; }
             set { picturePath = value; }
         }
-
-
-
         #endregion
 
         #region Constructors
@@ -98,39 +95,47 @@ namespace NavalBattle.Models
         #endregion
 
         #region StaticFunctions
-        #endregion
-
-        #region Functions
         public static List<Ship> ShipCreation()
         {
-            // first ship
+            List<Ship> result = new List<Ship>();
+
             Ship shipA = new Ship();
             shipA.Name = "Submarine";
             shipA.heightNbBox = 2;
             shipA.widthNbBox = 1;
             shipA.State = true;
             shipA.PicturePath = "";
+            result.Add(shipA);
+
             Ship shipB = new Ship();
             shipB.Name = "Corvette";
             shipB.heightNbBox = 3;
             shipB.widthNbBox = 1;
             shipB.State = true;
             shipB.PicturePath = "";
+            result.Add(shipB);
+
             Ship shipC = new Ship();
             shipC.Name = "Cruiser";
             shipC.heightNbBox = 4;
             shipC.widthNbBox = 1;
             shipC.State = true;
             shipC.PicturePath = "";
+            result.Add(shipC);
+
             Ship shipD = new Ship();
             shipD.Name = "Aircraft carrier";
             shipD.heightNbBox = 4;
             shipD.widthNbBox = 2;
             shipD.State = true;
             shipD.PicturePath = "";
+            result.Add(shipD);
 
-            return [shipA, shipB, shipC, shipD];
+            return result;
         }
+        #endregion
+
+        #region Functions
         #endregion
 
         #region Events
