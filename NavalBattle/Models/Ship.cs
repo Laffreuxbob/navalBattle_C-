@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +20,21 @@ namespace NavalBattle.Models
         #endregion
 
         #region Attributs
-        private String name;
-        private int nbBox;
-        private String picturePath;
-
-
+        private long id; // id of the ship
+        private String name; // name of the ship
+        private int nbBox; // size of the ship
+        private Boolean state; // the ship is still alive ?
+        private int[][] positionShip; // position X,Y of each case of the ship
+        private String picturePath; // path for the picture of the ship
         #endregion
 
         #region Properties
+        [Key]
+        public long Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
         public String Name
         {
@@ -39,6 +46,18 @@ namespace NavalBattle.Models
         {
             get { return nbBox; }
             set { nbBox = value; }
+        }
+
+        public Boolean State
+        {
+            get { return state; }
+            set { state = value; }
+        }
+
+        public int[][] PositionShip
+        {
+            get { return positionShip; }
+            set { positionShip = value; }
         }
 
         public String PicturePath
