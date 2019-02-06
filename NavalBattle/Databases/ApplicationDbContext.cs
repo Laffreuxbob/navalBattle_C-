@@ -1,13 +1,14 @@
-﻿using NavalBattle.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NavalBattle.Models;
 
 namespace NavalBattle.Databases
 {
-    public class ApplicationDbContext
+    public class ApplicationDbContext : DbContext
     {
 
         #region StaticVariables
@@ -32,7 +33,7 @@ namespace NavalBattle.Databases
         /// </summary>
         public ApplicationDbContext()
         {
-                
+            DevResetDatabase();
         }
         #endregion
 
@@ -40,6 +41,14 @@ namespace NavalBattle.Databases
         #endregion
 
         #region Functions
+        private void DevResetDatabase()
+        {
+            if (!this.Database.CompatibleWithModel(false))
+            {
+                this.Database.Delete();
+                this.Database.Create();
+            }
+        }
         #endregion
 
         #region Events
