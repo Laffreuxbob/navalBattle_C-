@@ -13,6 +13,11 @@ namespace NavalBattle.Models
         #endregion
 
         #region Constants
+        /*
+         width & height send by user
+             */
+        int WIDTH_GAME = 4;
+        int HEIGHT_GAME = 5;
         #endregion
 
         #region Variables
@@ -38,6 +43,23 @@ namespace NavalBattle.Models
         #endregion
 
         #region Functions
+        public void Play()
+        {
+            createBox();
+            var list = Box.GenerateList(WIDTH_GAME, HEIGHT_GAME);
+            Box.ShowListBoxConsole(list);
+            
+        }
+
+        public void createBox()
+        {
+            System.Console.WriteLine("create box");
+            Box box1 = new Box();
+            box1.ShowBoxConsole();
+            Box.GenerateList(HEIGHT_GAME, WIDTH_GAME);
+
+        }
+
         private void GetShot(Box box)
         {
             if (box.State.Equals(StateBox.empty))
@@ -68,8 +90,20 @@ namespace NavalBattle.Models
         private Boolean CheckDestroyedShip(Ship ship)
         {
             /* If at least one box is state.ship, ship is not destroyed yet*/
-            return Array.Exists(ship.positionShip, box => box.State.Equals(StateBox.ship));
+            //return Array.Exists(ship.positionShip, box => box.State.Equals(StateBox.ship));
+            return true;
             
+        }
+
+        public Box GetBoxInListOnClick(int x, int y, List<Box> list)
+        {
+            /* 
+             * (x,y) coordonnées du clic
+             * step = table width
+             *  
+             */
+            int key = WIDTH_GAME * (x - 1) + y;
+            return list[key];
         }
 
 
