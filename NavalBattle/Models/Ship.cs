@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NavalBattle.Models
 {
-    class Ship
+    public class Ship
     {
 
 
@@ -23,7 +23,8 @@ namespace NavalBattle.Models
         #region Attributs
         private long id; // id of the ship
         private String name; // name of the ship
-        private int nbBox; // size of the ship
+        private int widthNbBox; // size of the ship
+        private int heightNbBox; // size of the ship
         private Boolean state; // the ship is still alive ?
         private int[][] positionShip; // position X,Y of each case of the ship
         private String picturePath; // path for the picture of the ship
@@ -43,10 +44,16 @@ namespace NavalBattle.Models
             set { name = value; }
         }
 
-        public int NbBox
+        public int WidthNbBox
         {
-            get { return nbBox; }
-            set { nbBox = value; }
+            get { return widthNbBox; }
+            set { widthNbBox = value; }
+        }
+
+        public int HeightNbBox
+        {
+            get { return heightNbBox; }
+            set { heightNbBox = value; }
         }
 
         public Boolean State
@@ -79,39 +86,50 @@ namespace NavalBattle.Models
         {
 
         }
+
+        public Ship(string name, int widthNbBox, int heightNbBox, Boolean state, String picturePath)
+        {
+            this.name = name;
+            this.widthNbBox = widthNbBox;
+            this.heightNbBox = heightNbBox;
+            this.state = state;
+            this.picturePath = picturePath;
+        }
         #endregion
 
         #region StaticFunctions
         #endregion
 
         #region Functions
-        public void ShipCreation()
+        public static List<Ship> ShipCreation()
         {
             // first ship
             Ship shipA = new Ship();
-            shipA.Id = 1;
             shipA.Name = "Submarine";
-            shipA.NbBox = 2;
+            shipA.heightNbBox = 2;
+            shipA.widthNbBox = 1;
             shipA.State = true;
             shipA.PicturePath = "";
             Ship shipB = new Ship();
-            shipB.Id = 2;
             shipB.Name = "Corvette";
-            shipB.NbBox = 3;
+            shipB.heightNbBox = 3;
+            shipB.widthNbBox = 1;
             shipB.State = true;
             shipB.PicturePath = "";
             Ship shipC = new Ship();
-            shipC.Id = 3;
             shipC.Name = "Cruiser";
-            shipC.NbBox = 4;
+            shipC.heightNbBox = 4;
+            shipC.widthNbBox = 1;
             shipC.State = true;
             shipC.PicturePath = "";
             Ship shipD = new Ship();
-            shipD.Id = 4;
             shipD.Name = "Aircraft carrier";
-            shipD.NbBox = 5;
+            shipD.heightNbBox = 4;
+            shipD.widthNbBox = 2;
             shipD.State = true;
             shipD.PicturePath = "";
+
+            return [shipA, shipB, shipC, shipD];
         }
         #endregion
 

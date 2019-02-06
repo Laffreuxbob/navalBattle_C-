@@ -16,8 +16,8 @@ namespace NavalBattle.Models
         /*
          width & height send by user
              */
-        int WIDTH_GAME = 4;
-        int HEIGHT_GAME = 5;
+        public const int WIDTH_GAME = 4;
+        public const int HEIGHT_GAME = 5;
         #endregion
 
         #region Variables
