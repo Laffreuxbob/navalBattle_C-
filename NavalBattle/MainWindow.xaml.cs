@@ -1,4 +1,4 @@
-﻿using NavalBattle.Models;
+using NavalBattle.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +31,11 @@ namespace NavalBattle
         #endregion
 
         #region Variables
+        List<Ship> list_ship_display;
+        List<ListShip> placementPlayeur;
+        List<ListShip> placementVersus;
+        int quantity;
+        List<Ship> maListe;
         #endregion
 
         #region Attributs
