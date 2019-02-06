@@ -49,6 +49,10 @@ namespace NavalBattle.Models
             var list = Box.GenerateList(WIDTH_GAME, HEIGHT_GAME);
             Box.ShowListBoxConsole(list);
             GameManager.CreateGame();
+
+            /*create 2 Players
+             while player1.win OR player2.win
+             */
             
         }
 
