@@ -21,6 +21,13 @@ namespace NavalBattle.Databases
         #endregion
 
         #region Attributs
+        /*private DbSet<> myVar;
+
+        public DbSet<> MyProperty
+        {
+            get { return myVar; }
+            set { myVar = value; }
+        }*/
 
         #endregion
 
