@@ -52,7 +52,7 @@ namespace NavalBattle.Models
 
         }
 
-        public void getShip(Box box)
+        private void getShip(Box box)
         {
             if (box.State == StateBox.empty)
             {
@@ -64,6 +64,16 @@ namespace NavalBattle.Models
             }
 
         }
+
+        private Boolean CheckDestroyedShip(Ship ship)
+        {
+            /* If at least one box is state.ship, ship is not destroyed yet*/
+            return Array.Exists(ship.positionShip, box => box.State.Equals(StateBox.ship));
+            
+        }
+
+
+
         #endregion
 
         #region Events
