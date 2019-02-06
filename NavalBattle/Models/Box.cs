@@ -84,9 +84,10 @@ namespace NavalBattle.Models
         #endregion
 
         #region Functions
-        public void show()
+        public void Show() => System.Console.WriteLine("Box : x: " + this.xPos + ", y: " + this.yPos + ", state : " + this.state);
+        public String ShowBoxConsole()
         {
-            System.Console.WriteLine("Box : x: " + this.xPos + ", y: " + this.yPos + ", state : " + this.state);
+            return ("[" + this.xPos + "-" + this.yPos + "-" + this.state + "] ");
         }
         #endregion
 
