@@ -1,4 +1,4 @@
-﻿using NavalBattle.Models;
+using NavalBattle.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +33,11 @@ namespace NavalBattle
         #endregion
 
         #region Variables
+        List<Ship> list_ship_display;
+        List<ListShip> placementPlayeur;
+        List<ListShip> placementVersus;
+        int quantity;
+        List<Ship> maListe;
         #endregion
 
         #region Attributs
@@ -49,7 +54,36 @@ namespace NavalBattle
         {
             InitializeComponent();
             createBox();
+            list_ship_display = Ship.ShipCreation();
+            placementPlayeur.Clear();
+            placementVersus.Clear();
+            foreach (Ship item in list_ship_display)
+            {
+                // define quantity, name and dimension for each ship
 
+                // affichage similaire pour chaque navire -> template
+                // attente de l'évènement (click) qui fait passer a la suite
+                quantity = 1;
+                ListShip element = new ListShip();
+                element.Quantity = quantity;
+                element.Chaine = quantity + " " + item.Name + " restant(s).";
+
+                maListe.Clear();
+                for (int i = 0; i < quantity; i++)
+                {
+                    Ship boat = new Ship(item.Name, item.WidthNbBox, item.HeightNbBox, item.State, item.PicturePath);
+                    maListe.Add(boat);
+                }
+                element.ShipsList = maListe;
+
+                placementPlayeur.Add(element);
+                placementVersus.Add(element);
+            }
+            // define position for each ship of the playeur
+            // define position for each ship of the IA
+            /* begin to delete when position is operationnal */
+            /* end to delete when position is operationnal */
+            display_ship_list();
         }
         #endregion
 
@@ -66,6 +100,12 @@ namespace NavalBattle
             box1.Show();
             Box.GenerateList(HEIGHT_GAME, WIDTH_GAME);
             
+        }
+
+        public void display_ship_list()
+        {
+            String elem_display_playeur = "";
+            String elem_display_versus = "";
         }
         #endregion
 
