@@ -104,6 +104,18 @@ namespace NavalBattle.Models
 
         }
 
+        public void getShip()
+        {
+            if (this.state == StateBox.empty)
+            {
+                this.state = StateBox.ship;
+            }
+            else
+            {
+                System.Console.WriteLine("Cant add ship here !");
+            }
+
+        }
         #endregion
 
         #region Events
