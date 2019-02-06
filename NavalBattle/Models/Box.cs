@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -61,6 +61,26 @@ namespace NavalBattle.Models
         #endregion
 
         #region StaticFunctions
+
+        public static List<List<Box>> GenerateList(int width, int height)
+        {
+            System.Console.WriteLine("Generate list");
+            List<List<Box>> listBoxGame = new List<List<Box>>();
+            for (int i = 1; i <= width; i++)
+            {
+                List<Box> rowBox = new List<Box>();
+                String rowConsole = "";
+                for (int j = 1; j <= height; j++)
+                {
+                    Box addBox = new Box(i, j);
+                    rowConsole += addBox.ShowBoxConsole();
+                    rowBox.Add(addBox);
+                }
+                System.Console.WriteLine(rowConsole);
+                listBoxGame.Add(rowBox);
+            }
+            return listBoxGame;
+        }
         #endregion
 
         #region Functions
