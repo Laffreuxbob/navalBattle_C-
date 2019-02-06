@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -85,6 +85,15 @@ namespace NavalBattle.Models
         public Ship()
         {
 
+        }
+
+        public Ship(string name, int widthNbBox, int heightNbBox, Boolean state, String picturePath)
+        {
+            this.name = name;
+            this.widthNbBox = widthNbBox;
+            this.heightNbBox = heightNbBox;
+            this.state = state;
+            this.picturePath = picturePath;
         }
         #endregion
 
