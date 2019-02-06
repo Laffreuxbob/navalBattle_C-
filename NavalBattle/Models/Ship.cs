@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NavalBattle.Models
 {
-    class Ship
+    public class Ship
     {
 
 
@@ -85,33 +85,35 @@ namespace NavalBattle.Models
         #endregion
 
         #region Functions
-        public void ShipCreation()
+        public static List<Ship> ShipCreation()
         {
             // first ship
             Ship shipA = new Ship();
-            shipA.Id = 1;
             shipA.Name = "Submarine";
-            shipA.NbBox = 2;
+            shipA.heightNbBox = 2;
+            shipA.widthNbBox = 1;
             shipA.State = true;
             shipA.PicturePath = "";
             Ship shipB = new Ship();
-            shipB.Id = 2;
             shipB.Name = "Corvette";
-            shipB.NbBox = 3;
+            shipB.heightNbBox = 3;
+            shipB.widthNbBox = 1;
             shipB.State = true;
             shipB.PicturePath = "";
             Ship shipC = new Ship();
-            shipC.Id = 3;
             shipC.Name = "Cruiser";
-            shipC.NbBox = 4;
+            shipC.heightNbBox = 4;
+            shipC.widthNbBox = 1;
             shipC.State = true;
             shipC.PicturePath = "";
             Ship shipD = new Ship();
-            shipD.Id = 4;
             shipD.Name = "Aircraft carrier";
-            shipD.NbBox = 5;
+            shipD.heightNbBox = 4;
+            shipD.widthNbBox = 2;
             shipD.State = true;
             shipD.PicturePath = "";
+
+            return [shipA, shipB, shipC, shipD];
         }
         #endregion
 
