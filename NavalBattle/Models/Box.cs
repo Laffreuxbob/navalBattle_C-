@@ -13,7 +13,7 @@ namespace NavalBattle.Models
         #endregion
 
         #region Constants
-        enum StateBox  {empty, ship, miss, destroy}
+        
         #endregion
 
         #region Variables
@@ -24,9 +24,6 @@ namespace NavalBattle.Models
         private int xPos;
         private int yPos;
         private StateBox state;
-
-       
-
 
         #endregion
 
@@ -41,6 +38,13 @@ namespace NavalBattle.Models
             get { return yPos; }
             set { yPos = value; }
         }
+
+        public StateBox State
+        {
+            get { return state; }
+            set { state = value; }
+        }
+
         #endregion
 
         #region Constructors
@@ -62,9 +66,9 @@ namespace NavalBattle.Models
 
         #region StaticFunctions
 
-        public static List<List<Box>> GenerateList(int width, int height)
+        public static List<List<Box>> GenerateList2D(int width, int height)
         {
-            System.Console.WriteLine("Generate list");
+            System.Console.WriteLine("Generate list 2D");
             List<List<Box>> listBoxGame = new List<List<Box>>();
             for (int i = 1; i <= width; i++)
             {
@@ -81,6 +85,21 @@ namespace NavalBattle.Models
             }
             return listBoxGame;
         }
+
+        public static List<Box> GenerateList(int width, int height)
+        {
+            List<Box> listBoxGame = new List<Box>();
+
+            for(int i = 1; i <= width; i++)
+            {
+                for (int j = 1; j <= height; j++)
+                {
+                    listBoxGame.Add(new Box(i, j));
+                }
+            }
+            return listBoxGame;
+        }
+
         #endregion
 
         #region Functions
@@ -90,32 +109,7 @@ namespace NavalBattle.Models
             return ("[" + this.xPos + "-" + this.yPos + "-" + this.state + "] ");
         }
 
-        public void GetShot()
-        {
-            if(this.state == StateBox.empty)
-            {
-                this.state = StateBox.miss;
-            }
-
-            if (this.state == StateBox.ship)
-            {
-                this.state = StateBox.destroy;
-            }
-
-        }
-
-        public void getShip()
-        {
-            if (this.state == StateBox.empty)
-            {
-                this.state = StateBox.ship;
-            }
-            else
-            {
-                System.Console.WriteLine("Cant add ship here !");
-            }
-
-        }
+        
         #endregion
 
         #region Events
