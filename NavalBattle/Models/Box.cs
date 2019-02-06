@@ -89,6 +89,21 @@ namespace NavalBattle.Models
         {
             return ("[" + this.xPos + "-" + this.yPos + "-" + this.state + "] ");
         }
+
+        public void GetShot()
+        {
+            if(this.state == StateBox.empty)
+            {
+                this.state = StateBox.miss;
+            }
+
+            if (this.state == StateBox.ship)
+            {
+                this.state = StateBox.destroy;
+            }
+
+        }
+
         #endregion
 
         #region Events
