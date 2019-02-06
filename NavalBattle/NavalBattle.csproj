@@ -80,6 +80,7 @@
     <Compile Include="Models\Box.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\GameManager.cs" />
+    <Compile Include="Models\ListShip.cs" />
     <Compile Include="Models\Ship.cs" />
     <Compile Include="Models\StateBox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
