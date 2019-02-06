@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +13,7 @@ namespace NavalBattle.Models
         #endregion
 
         #region Constants
-        enum StateBox  {empty, ship, miss, destroy}
+        
         #endregion
 
         #region Variables
@@ -24,9 +24,6 @@ namespace NavalBattle.Models
         private int xPos;
         private int yPos;
         private StateBox state;
-
-       
-
 
         #endregion
 
@@ -41,6 +38,13 @@ namespace NavalBattle.Models
             get { return yPos; }
             set { yPos = value; }
         }
+
+        public StateBox State
+        {
+            get { return state; }
+            set { state = value; }
+        }
+
         #endregion
 
         #region Constructors
@@ -61,13 +65,51 @@ namespace NavalBattle.Models
         #endregion
 
         #region StaticFunctions
+
+        public static List<List<Box>> GenerateList2D(int width, int height)
+        {
+            System.Console.WriteLine("Generate list 2D");
+            List<List<Box>> listBoxGame = new List<List<Box>>();
+            for (int i = 1; i <= width; i++)
+            {
+                List<Box> rowBox = new List<Box>();
+                String rowConsole = "";
+                for (int j = 1; j <= height; j++)
+                {
+                    Box addBox = new Box(i, j);
+                    rowConsole += addBox.ShowBoxConsole();
+                    rowBox.Add(addBox);
+                }
+                System.Console.WriteLine(rowConsole);
+                listBoxGame.Add(rowBox);
+            }
+            return listBoxGame;
+        }
+
+        public static List<Box> GenerateList(int width, int height)
+        {
+            List<Box> listBoxGame = new List<Box>();
+
+            for(int i = 1; i <= width; i++)
+            {
+                for (int j = 1; j <= height; j++)
+                {
+                    listBoxGame.Add(new Box(i, j));
+                }
+            }
+            return listBoxGame;
+        }
+
         #endregion
 
         #region Functions
-        public void show()
+        public void Show() => System.Console.WriteLine("Box : x: " + this.xPos + ", y: " + this.yPos + ", state : " + this.state);
+        public String ShowBoxConsole()
         {
-            System.Console.WriteLine("Box : x: " + this.xPos + ", y: " + this.yPos + ", state : " + this.state);
+            return ("[" + this.xPos + "-" + this.yPos + "-" + this.state + "] ");
         }
+
+        
         #endregion
 
         #region Events
