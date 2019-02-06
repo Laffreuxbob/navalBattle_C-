@@ -23,7 +23,8 @@ namespace NavalBattle.Models
         #region Attributs
         private long id; // id of the ship
         private String name; // name of the ship
-        private int nbBox; // size of the ship
+        private int widthNbBox; // size of the ship
+        private int heightNbBox; // size of the ship
         private Boolean state; // the ship is still alive ?
         private int[][] positionShip; // position X,Y of each case of the ship
         private String picturePath; // path for the picture of the ship
@@ -43,10 +44,16 @@ namespace NavalBattle.Models
             set { name = value; }
         }
 
-        public int NbBox
+        public int WidthNbBox
         {
-            get { return nbBox; }
-            set { nbBox = value; }
+            get { return widthNbBox; }
+            set { widthNbBox = value; }
+        }
+
+        public int HeightNbBox
+        {
+            get { return heightNbBox; }
+            set { heightNbBox = value; }
         }
 
         public Boolean State
