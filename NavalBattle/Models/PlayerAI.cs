@@ -26,10 +26,11 @@ namespace NavalBattle.Models
         #endregion
 
         #region Attributs
+        private PlayerMode mode;
+
         #endregion
 
         #region Properties
-        private PlayerMode mode;
 
         public PlayerMode Mode
         {
@@ -47,6 +48,13 @@ namespace NavalBattle.Models
         {
 
         }
+
+        public PlayerAI(String name, PlayerType type, PlayerMode mode)
+        {
+            this.Name = name;
+            this.Type = type;
+            this.Mode = mode;
+        }
         #endregion
 
         #region StaticFunctions
@@ -55,6 +63,13 @@ namespace NavalBattle.Models
         #region Functions
 
         // Automatic Box selection in list and game grid
+
+        public override void Show()
+        {
+            base.Show();
+            System.Console.WriteLine( this.Mode);
+        }
+
         private Box SelectBox(List<Box> list, int width, int height, int step)
         {
             switch (this.Mode)
