@@ -54,7 +54,7 @@ namespace NavalBattle
         {
             InitializeComponent();
             createBox();
-            list_ship_display = Ship.ShipCreation();
+            /*list_ship_display = Ship.ShipCreation();
             placementPlayeur.Clear();
             placementVersus.Clear();
             foreach (Ship item in list_ship_display)
@@ -78,12 +78,12 @@ namespace NavalBattle
 
                 placementPlayeur.Add(element);
                 placementVersus.Add(element);
-            }
+            }*/
             // define position for each ship of the playeur
             // define position for each ship of the IA
             /* begin to delete when position is operationnal */
             /* end to delete when position is operationnal */
-            display_ship_list();
+            //display_ship_list();
         }
         #endregion
 
