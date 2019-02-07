@@ -77,6 +77,10 @@ namespace NavalBattle.Models
             return this.shottedBox;
 
 
+        // THIS IS EVIL AI, SHE KNOWS WHERE YOUR FLEET IS
+        private Box SelectBox_evil(List<Box> list)
+        {
+            return list[this.selectedBoxIndex + 1];
         }
         #endregion
 
