@@ -76,7 +76,7 @@ namespace NavalBattle.Models
             player2.Show();
 
             var list = Box.GenerateList(WIDTH_GAME, HEIGHT_GAME);
-            Box.ShowListBoxConsole(list);
+            Box.ShowListBoxConsole_1Dto2D(list, HEIGHT_GAME);
             GameManager.CreateGame();
 
             /*create 2 Players

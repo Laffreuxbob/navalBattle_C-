@@ -124,7 +124,25 @@ namespace NavalBattle.Models
             }
         }
 
-        
+        // Display list 1D in 2D in console
+        public static void ShowListBoxConsole_1Dto2D(List<Box> list, int step)
+        {
+            String tempoRow = "";
+            for (int count = 0; count < list.Count; count++)
+            {
+                if (count%step == 0 && count != 0)
+                {
+                    System.Console.WriteLine(tempoRow);
+                    tempoRow = "";
+                }
+                tempoRow += list[count].StringBox();
+            }
+            System.Console.WriteLine(tempoRow);
+        }
+
+
+
+
         #endregion
 
         #region Events
