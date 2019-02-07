@@ -14,7 +14,11 @@ namespace NavalBattle.Models
 
         #region Constants
         /*
-         width & height send by user
+         width 
+         height 
+         nbPlayer
+         name1 & name2 
+         => send by user
              */
         public const int WIDTH_GAME = 4;
         public const int HEIGHT_GAME = 5;
@@ -66,6 +70,7 @@ namespace NavalBattle.Models
                     Console.WriteLine("Default case");
                     break;
             }
+
             var list = Box.GenerateList(WIDTH_GAME, HEIGHT_GAME);
             Box.ShowListBoxConsole(list);
             GameManager.CreateGame();
