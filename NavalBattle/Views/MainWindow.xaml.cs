@@ -15,7 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 
-namespace NavalBattle
+namespace NavalBattle.Views
 {
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
@@ -32,11 +32,11 @@ namespace NavalBattle
         #endregion
 
         #region Variables
-        List<Ship> list_ship_display;
-        List<ListShip> placementPlayeur;
-        List<ListShip> placementVersus;
-        int quantity;
-        List<Ship> maListe;
+        private List<Ship> list_ship_display;
+        private List<ListShip> placementPlayeur;
+        private List<ListShip> placementVersus;
+        private int quantity;
+        private List<Ship> maListe;
         #endregion
 
         #region Attributs
@@ -52,6 +52,7 @@ namespace NavalBattle
         public MainWindow()
         {
             InitializeComponent();
+            this.Content = new PageGamePlayer();
 
             GameManager mainGame = new GameManager();
             mainGame.Play();
