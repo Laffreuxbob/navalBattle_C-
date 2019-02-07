@@ -21,6 +21,8 @@ namespace NavalBattle.Models
 
         #region Attributs
         private String name;
+        private PlayerType player;
+        private Boolean winner = false;
 
         #endregion
 
@@ -32,13 +34,20 @@ namespace NavalBattle.Models
             set { name = value; }
         }
 
-        private PlayerType player;
 
         public PlayerType Type
         {
             get { return player; }
             set { player = value; }
         }
+
+
+        public Boolean Winner
+        {
+            get { return winner; }
+            set { winner = value; }
+        }
+
 
 
         #endregion
@@ -68,6 +77,11 @@ namespace NavalBattle.Models
         #endregion
 
         #region Functions
+
+        public void Show()
+        {
+            System.Console.WriteLine(this.Name + " - " + this.Type + " - " + this.Winner);
+        }
         #endregion
 
         #region Events
