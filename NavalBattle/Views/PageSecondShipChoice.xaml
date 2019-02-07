@@ -1,0 +1,56 @@
+﻿<Page x:Class="NavalBattle.Views.PageSecondShipChoice"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NavalBattle.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageFirstShipChoice">
+
+    <Grid>
+        <!-- Définition des proportions de la fenêtre -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2.5*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!-- Table de jeu -->
+        <Grid x:Name="contentThree" Grid.Column="1" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" TextWrapping="Wrap">Step 3 : Define the dimension of the ship and the quantity (if you can't place all of the ship in your map, the quantity will change for all ship create could be countain in the map).</TextBlock>
+
+            <TextBlock x:Name="secondShipWidthLabel" Grid.Column="1" Grid.Row="3">Width :</TextBlock>
+            <TextBlock x:Name="secondShipHeighthLabel" Grid.Column="1" Grid.Row="5">Height :</TextBlock>
+            <TextBlock x:Name="secondShipQuantityLabel" Grid.Column="1" Grid.Row="7">Quantity :</TextBlock>
+
+            <TextBox x:Name="secondShipWidthTxt" Grid.Column="2" Grid.Row="3">1</TextBox>
+            <TextBox x:Name="secondShipHeightTxt" Grid.Column="2" Grid.Row="5">2</TextBox>
+            <TextBox x:Name="secondShipQuantityTxt" Grid.Column="2" Grid.Row="7">1</TextBox>
+
+            <Button x:Name="thirdStepBtn" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2" Click="secondShipChoice_Click">Next step</Button>
+        </Grid>
+    </Grid>
+</Page>
