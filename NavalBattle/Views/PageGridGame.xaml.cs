@@ -55,6 +55,7 @@ namespace NavalBattle.Views
         #region Events
         private void placementChoice_Click(object sender, RoutedEventArgs e)
         {
+            (this.Parent as Window).Content = new PageGame();
         }
         #endregion
         

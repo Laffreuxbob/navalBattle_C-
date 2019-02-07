@@ -65,6 +65,9 @@
     <Compile Include="Views\PageFourthShipChoice.xaml.cs">
       <DependentUpon>PageFourthShipChoice.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PageGame.xaml.cs">
+      <DependentUpon>PageGame.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PageGridGame.xaml.cs">
       <DependentUpon>PageGridGame.xaml</DependentUpon>
     </Compile>
@@ -96,6 +99,10 @@
     <Page Include="Views\PageFourthShipChoice.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PageGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PageGridGame.xaml">
       <SubType>Designer</SubType>
