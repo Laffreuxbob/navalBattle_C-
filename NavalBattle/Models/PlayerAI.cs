@@ -70,6 +70,8 @@ namespace NavalBattle.Models
             System.Console.WriteLine( this.Mode);
         }
 
+
+        // Select a box according to the method of the PlayerAI.mode
         private Box SelectBox(List<Box> list, int width, int height, int step)
         {
             switch (this.Mode)

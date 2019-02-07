@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +21,7 @@ namespace NavalBattle.Models
 
         #region Attributs
         private String name;
-        private PlayerType player;
+        private PlayerType player; // AI human or other
         private Boolean winner = false;
         private Boolean lose = false;
         private List<Box> list;
@@ -78,7 +78,7 @@ namespace NavalBattle.Models
 
         public Player(String name, PlayerType type)
         {
-            this.Name = name != "" ? name : "default_name";
+            this.Name = name != "" ? name : "default_name"; // in case of user dont send name
             this.Type = type;
         }
         #endregion
@@ -93,13 +93,14 @@ namespace NavalBattle.Models
 
         #region Functions
 
+        // Show Player in console
         public virtual void Show()
         {
             System.Console.WriteLine(this.Name + " - " + this.Type + " - " + this.Winner);
         }
         #endregion
 
-        //
+        // Check if this player got at least one ship alive in his boat list
         public Boolean CheckWin(List<Box> list)
         {
             foreach(Box box in this.list)
