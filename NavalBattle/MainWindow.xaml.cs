@@ -28,8 +28,7 @@ namespace NavalBattle
         #endregion
 
         #region Constants
-        int WIDTH_GAME = 10;
-        int HEIGHT_GAME = 10;
+        
         #endregion
 
         #region Variables
@@ -53,6 +52,9 @@ namespace NavalBattle
         public MainWindow()
         {
             InitializeComponent();
+
+            GameManager mainGame = new GameManager();
+            mainGame.Play();
             createBox();
             /*list_ship_display = Ship.ShipCreation();
             placementPlayeur.Clear();
@@ -92,13 +94,13 @@ namespace NavalBattle
         #endregion
 
         #region Functions
-
+        
         public void createBox()
         {
             System.Console.WriteLine("create box");
             Box box1 = new Box();
-            box1.Show();
-            Box.GenerateList(HEIGHT_GAME, WIDTH_GAME);
+            box1.ShowBoxConsole();
+            Box.GenerateList(GameManager.HEIGHT_GAME, GameManager.WIDTH_GAME);
             
         }
 

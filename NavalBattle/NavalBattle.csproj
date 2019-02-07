@@ -81,6 +81,10 @@
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\GameManager.cs" />
     <Compile Include="Models\ListShip.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\PlayerAI.cs" />
+    <Compile Include="Models\PlayerMode.cs" />
+    <Compile Include="Models\PlayerType.cs" />
     <Compile Include="Models\Ship.cs" />
     <Compile Include="Models\StateBox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

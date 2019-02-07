@@ -77,7 +77,7 @@ namespace NavalBattle.Models
                 for (int j = 1; j <= height; j++)
                 {
                     Box addBox = new Box(i, j);
-                    rowConsole += addBox.ShowBoxConsole();
+                    rowConsole += addBox.StringBox();
                     rowBox.Add(addBox);
                 }
                 System.Console.WriteLine(rowConsole);
@@ -100,13 +100,23 @@ namespace NavalBattle.Models
             return listBoxGame;
         }
 
+        
+
         #endregion
 
         #region Functions
-        public void Show() => System.Console.WriteLine("Box : x: " + this.xPos + ", y: " + this.yPos + ", state : " + this.state);
-        public String ShowBoxConsole()
+        public void ShowBoxConsole() => System.Console.WriteLine("Box : x: " + this.xPos + ", y: " + this.yPos + ", state : " + this.state);
+        public String StringBox()
         {
             return ("[" + this.xPos + "-" + this.yPos + "-" + this.state + "] ");
+        }
+
+        public static void ShowListBoxConsole(List<Box> list)
+        {
+            foreach(Box box in list)
+            {
+                System.Console.WriteLine(box.StringBox());
+            }
         }
 
         
