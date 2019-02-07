@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace NavalBattle.Views
 {
     /// <summary>
-    /// Logique d'interaction pour PageFirstShipChoice.xaml
+    /// Logique d'interaction pour PageGridGame.xaml
     /// </summary>
-    public partial class PageThirdShipChoice : Page
+    public partial class PageGridGame : Page
     {
-        
+
         #region StaticVariables
         #endregion
 
@@ -40,7 +40,7 @@ namespace NavalBattle.Views
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public PageThirdShipChoice()
+        public PageGridGame()
         {
             InitializeComponent();
         }
@@ -53,11 +53,11 @@ namespace NavalBattle.Views
         #endregion
 
         #region Events
-        private void thirdShipChoice_Click(object sender, RoutedEventArgs e)
+        private void placementChoice_Click(object sender, RoutedEventArgs e)
         {
-            (this.Parent as Window).Content = new PageFourthShipChoice();
+            (this.Parent as Window).Content = new PageGame();
         }
         #endregion
-
+        
     }
 }

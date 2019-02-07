@@ -48,7 +48,7 @@
 
             <TextBox x:Name="secondShipWidthTxt" Grid.Column="2" Grid.Row="3">1</TextBox>
             <TextBox x:Name="secondShipHeightTxt" Grid.Column="2" Grid.Row="5">2</TextBox>
-            <TextBox x:Name="secondShipQuantityTxt" Grid.Column="2" Grid.Row="7">1</TextBox>
+            <TextBox x:Name="secondShipQuantityTxt" Grid.Column="2" Grid.Row="7">2</TextBox>
 
             <Button x:Name="thirdStepBtn" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2" Click="secondShipChoice_Click">Next step</Button>
         </Grid>
