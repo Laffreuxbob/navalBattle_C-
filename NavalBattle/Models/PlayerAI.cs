@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,9 +17,12 @@ namespace NavalBattle.Models
         #endregion
 
         #region Variables
-        private int selectedBoxIndex = new int();
+        // Needed variables in box selection functions
+        private int selectedBoxIndex = -1;
         private Box shottedBox = new Box();
         private Random rnd = new Random();
+        private Box tempoBox = new Box();
+
         #endregion
 
         #region Attributs
