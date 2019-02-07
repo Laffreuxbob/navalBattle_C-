@@ -18,9 +18,16 @@ namespace NavalBattle.Models
              */
         public const int WIDTH_GAME = 4;
         public const int HEIGHT_GAME = 5;
+        public const int NB_PLAYER = 1;
+        public const String NAME1 = "name1";
+        public const String NAME2 = "name2";
         #endregion
 
         #region Variables
+        public Player player1 = Player.CreatePlayer("name", PlayerType.russianWarship);
+        public Player player2 = Player.CreatePlayer("name", PlayerType.russianWarship);
+
+
         #endregion
 
         #region Attributs
@@ -45,7 +52,20 @@ namespace NavalBattle.Models
         #region Functions
         public void Play()
         {
-            createBox();
+            switch (NB_PLAYER)
+            {
+                case 1:
+                    player1 = Player.CreatePlayer(NAME1, PlayerType.human);
+                    Player player2 = Player.CreatePlayer(NAME2, PlayerType.ai);
+                    break;
+                case 2:
+                    Player player1 = Player.CreatePlayer(NAME1, PlayerType.human);
+                    Player player2 = Player.CreatePlayer(NAME2, PlayerType.ai);
+                    break;
+                default:
+                    Console.WriteLine("Default case");
+                    break;
+            }
             var list = Box.GenerateList(WIDTH_GAME, HEIGHT_GAME);
             Box.ShowListBoxConsole(list);
             GameManager.CreateGame();
@@ -54,6 +74,11 @@ namespace NavalBattle.Models
              while player1.win OR player2.win
              */
             
+        }
+
+        private void createPlayer()
+        {
+            throw new NotImplementedException();
         }
 
         private static void CreateGame()
