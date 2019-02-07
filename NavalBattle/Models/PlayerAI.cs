@@ -72,8 +72,13 @@ namespace NavalBattle.Models
                     break;
                 default:
                     return list[0];
-
-            }
+        // Fully random selection (sandbox ai)
+        private Box SelectBox_sandbox(List<Box> list)
+        {
+            this.selectedBoxIndex = this.rnd.Next(1, list.Count + 1);
+            return this.shottedBox = list[this.selectedBoxIndex];
+            
+        }
             return this.shottedBox;
         // Controlled selection (if i touched ship, a can try randmonly side boxes)
         private Box SelectBox_normal(List<Box> list, int width, int height, int step)
