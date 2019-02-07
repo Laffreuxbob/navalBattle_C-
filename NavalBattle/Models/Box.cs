@@ -33,7 +33,7 @@ namespace NavalBattle.Models
             get { return xPos; }
             set { xPos = value; }
         }
-        public int Ypos
+        public int YPos
         {
             get { return yPos; }
             set { yPos = value; }
