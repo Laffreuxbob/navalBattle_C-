@@ -78,7 +78,7 @@ namespace NavalBattle.Models
 
         #region Functions
 
-        public void Show()
+        public virtual void Show()
         {
             System.Console.WriteLine(this.Name + " - " + this.Type + " - " + this.Winner);
         }
