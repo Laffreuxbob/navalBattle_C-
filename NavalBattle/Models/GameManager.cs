@@ -28,8 +28,8 @@ namespace NavalBattle.Models
         #endregion
 
         #region Variables
-        public Player player1 = Player.CreatePlayer("name", PlayerType.russianWarship);
-        public Player player2 = Player.CreatePlayer("name", PlayerType.russianWarship);
+        public Player player1 = new Player();
+        public Player player2 = new Player();
 
 
         #endregion
@@ -59,12 +59,13 @@ namespace NavalBattle.Models
             switch (NB_PLAYER)
             {
                 case 1:
-                    player1 = Player.CreatePlayer(NAME1, PlayerType.human);
-                    player2 = Player.CreatePlayer(NAME2, PlayerType.ai);
+                    player1 = new Player(NAME1, PlayerType.human);
+                    player2 = new PlayerAI(NAME2, PlayerType.ai, PlayerMode.sandbox);  // default mode, send by user
+                    //System.Console.WriteLine((player2 as PlayerAI).Mode);
                     break;
                 case 2:
-                    player1 = Player.CreatePlayer(NAME1, PlayerType.human);
-                    player2 = Player.CreatePlayer(NAME2, PlayerType.human);
+                    player1 = new Player(NAME1, PlayerType.human);
+                    player2 = new Player(NAME2, PlayerType.human);
                     break;
                 default:
                     System.Console.WriteLine("Default case");
@@ -75,7 +76,7 @@ namespace NavalBattle.Models
             player2.Show();
 
             var list = Box.GenerateList(WIDTH_GAME, HEIGHT_GAME);
-            Box.ShowListBoxConsole(list);
+            Box.ShowListBoxConsole_1Dto2D(list, HEIGHT_GAME);
             GameManager.CreateGame();
 
             /*create 2 Players
