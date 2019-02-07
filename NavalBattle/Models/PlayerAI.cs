@@ -75,6 +75,45 @@ namespace NavalBattle.Models
 
             }
             return this.shottedBox;
+        // Controlled selection (if i touched ship, a can try randmonly side boxes)
+        private Box SelectBox_normal(List<Box> list, int width, int height, int step)
+        {
+            
+            if (this.shottedBox.State.Equals(StateBox.ship))
+            {
+                List<Box> targets = new List<Box>();
+
+                int lastBox_X = this.shottedBox.XPos;
+                int lastBox_Y = this.shottedBox.YPos;
+                if (lastBox_X + 1 < width)
+                {
+                    targets.Add(list[this.selectedBoxIndex + 1]);
+                }
+                if (lastBox_X - 1 > 0)
+                {
+                    targets.Add(list[this.selectedBoxIndex - 1]);
+                }
+                if (lastBox_Y + 1 < height)
+                {
+                    targets.Add(list[this.selectedBoxIndex + step]);
+                }
+                if (lastBox_Y - 1 > 0)
+                {
+                    targets.Add(list[this.selectedBoxIndex - step]);
+                }
+
+                targets.Add(list[this.rnd.Next(list.Count)]);
+
+                this.tempoBox =  targets[this.rnd.Next(targets.Count)];
+            }
+            else
+            {
+                this.tempoBox = this.SelectBox_sandbox(list);
+            }
+
+            return tempoBox;
+
+        }
 
 
         // THIS IS EVIL AI, SHE KNOWS WHERE YOUR FLEET IS
