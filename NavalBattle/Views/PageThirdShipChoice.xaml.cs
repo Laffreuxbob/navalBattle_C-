@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -55,7 +55,7 @@ namespace NavalBattle.Views
         #region Events
         private void thirdShipChoice_Click(object sender, RoutedEventArgs e)
         {
-
+            (this.Parent as Window).Content = new PageFourthShipChoice();
         }
         #endregion
 
