@@ -60,16 +60,19 @@ namespace NavalBattle.Models
             {
                 case 1:
                     player1 = Player.CreatePlayer(NAME1, PlayerType.human);
-                    Player player2 = Player.CreatePlayer(NAME2, PlayerType.ai);
+                    player2 = Player.CreatePlayer(NAME2, PlayerType.ai);
                     break;
                 case 2:
-                    Player player1 = Player.CreatePlayer(NAME1, PlayerType.human);
-                    Player player2 = Player.CreatePlayer(NAME2, PlayerType.ai);
+                    player1 = Player.CreatePlayer(NAME1, PlayerType.human);
+                    player2 = Player.CreatePlayer(NAME2, PlayerType.human);
                     break;
                 default:
-                    Console.WriteLine("Default case");
+                    System.Console.WriteLine("Default case");
                     break;
             }
+
+            player1.Show();
+            player2.Show();
 
             var list = Box.GenerateList(WIDTH_GAME, HEIGHT_GAME);
             Box.ShowListBoxConsole(list);
@@ -167,8 +170,17 @@ namespace NavalBattle.Models
         }
         #endregion
 
+        #region Player
 
-       
+        private void ShotBox(Box box)
+        {
+            GetShot(box);
+        }
+
+        
+        #endregion
+
+
 
 
 
