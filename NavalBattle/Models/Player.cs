@@ -23,7 +23,10 @@ namespace NavalBattle.Models
         private String name;
         private PlayerType player;
         private Boolean winner = false;
+        private Boolean lose = false;
+        private List<Box> list;
 
+        
         #endregion
 
         #region Properties
@@ -46,6 +49,18 @@ namespace NavalBattle.Models
         {
             get { return winner; }
             set { winner = value; }
+        }
+
+        public Boolean Lose
+        {
+            get { return lose; }
+            set { lose = value; }
+        }
+
+        public List<Box> List
+        {
+            get { return list; }
+            set { list = value; }
         }
 
 
@@ -83,6 +98,19 @@ namespace NavalBattle.Models
             System.Console.WriteLine(this.Name + " - " + this.Type + " - " + this.Winner);
         }
         #endregion
+
+        public Boolean CheckWin(List<Box> list)
+        {
+            foreach(Box box in this.list)
+            {
+                if (box.State.Equals(StateBox.ship))
+                {
+                    return this.Lose = false;
+                }
+            }
+            return this.lose = true;
+
+        }
 
         #region Events
         #endregion
