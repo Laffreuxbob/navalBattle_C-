@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,25 +53,27 @@ namespace NavalBattle.Models
         #endregion
 
         #region Functions
-        private Box SelectBox(List<Box> list)
+
+        // Automatic Box selection in list and game grid
+        private Box SelectBox(List<Box> list, int width, int height, int step)
         {
             switch (this.Mode)
             {
                 case PlayerMode.sandbox:
-                    
-                    this.selectedBoxIndex = this.rnd.Next(1, list.Count + 1);
-                    this.shottedBox = list[this.selectedBoxIndex];
+                    this.shottedBox = this.SelectBox_sandbox(list);
                     break;
                 case PlayerMode.normal:
-                    this.selectedBoxIndex = this.rnd.Next(1, list.Count + 1);
-                    this.shottedBox = list[this.selectedBoxIndex];
+                    this.shottedBox =  this.SelectBox_normal(list, width, height, step);
                     break;
                 case PlayerMode.evil:
-                    this.selectedBoxIndex = this.rnd.Next(1, list.Count + 1);
-                    this.shottedBox = list[this.selectedBoxIndex];
+                    this.shottedBox =  this.SelectBox_evil(list);
                     break;
                 default:
                     return list[0];
+            }
+            return this.shottedBox;
+        }
+
         // Fully random selection (sandbox ai)
         private Box SelectBox_sandbox(List<Box> list)
         {
@@ -79,7 +81,7 @@ namespace NavalBattle.Models
             return this.shottedBox = list[this.selectedBoxIndex];
             
         }
-            return this.shottedBox;
+
         // Controlled selection (if i touched ship, a can try randmonly side boxes)
         private Box SelectBox_normal(List<Box> list, int width, int height, int step)
         {
@@ -119,7 +121,6 @@ namespace NavalBattle.Models
             return tempoBox;
 
         }
-
 
         // THIS IS EVIL AI, SHE KNOWS WHERE YOUR FLEET IS
         private Box SelectBox_evil(List<Box> list)
