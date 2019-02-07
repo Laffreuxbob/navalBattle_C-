@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -99,16 +99,19 @@ namespace NavalBattle.Models
         }
         #endregion
 
+        //
         public Boolean CheckWin(List<Box> list)
         {
             foreach(Box box in this.list)
             {
                 if (box.State.Equals(StateBox.ship))
                 {
-                    return this.Lose = false;
+                    this.Lose = false;
+                    break;
                 }
+                this.lose = true;
             }
-            return this.lose = true;
+            return this.lose;
 
         }
 
