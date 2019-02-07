@@ -16,11 +16,10 @@ using System.Windows.Shapes;
 namespace NavalBattle.Views
 {
     /// <summary>
-    /// Logique d'interaction pour PageFirstShipChoice.xaml
+    /// Logique d'interaction pour PageGridGame.xaml
     /// </summary>
-    public partial class PageFourthShipChoice : Page
+    public partial class PageGridGame : Page
     {
-
 
         #region StaticVariables
         #endregion
@@ -41,7 +40,7 @@ namespace NavalBattle.Views
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public PageFourthShipChoice()
+        public PageGridGame()
         {
             InitializeComponent();
         }
@@ -54,11 +53,10 @@ namespace NavalBattle.Views
         #endregion
 
         #region Events
-        private void fourthShipChoice_Click(object sender, RoutedEventArgs e)
+        private void placementChoice_Click(object sender, RoutedEventArgs e)
         {
-            (this.Parent as Window).Content = new PageGridGame();
         }
         #endregion
-
+        
     }
 }
