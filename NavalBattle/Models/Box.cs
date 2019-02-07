@@ -66,6 +66,7 @@ namespace NavalBattle.Models
 
         #region StaticFunctions
 
+        // 2D list generation list = [ row[box, box...], row[], row[]...]
         public static List<List<Box>> GenerateList2D(int width, int height)
         {
             System.Console.WriteLine("Generate list 2D");
@@ -86,6 +87,7 @@ namespace NavalBattle.Models
             return listBoxGame;
         }
 
+        // 1D list generation list = [box, box, box...]
         public static List<Box> GenerateList(int width, int height)
         {
             List<Box> listBoxGame = new List<Box>();
@@ -105,12 +107,15 @@ namespace NavalBattle.Models
         #endregion
 
         #region Functions
+
+        // Display box in console
         public void ShowBoxConsole() => System.Console.WriteLine("Box : x: " + this.xPos + ", y: " + this.yPos + ", state : " + this.state);
         public String StringBox()
         {
             return ("[" + this.xPos + "-" + this.yPos + "-" + this.state + "] ");
         }
 
+        // Display list in console
         public static void ShowListBoxConsole(List<Box> list)
         {
             foreach(Box box in list)
