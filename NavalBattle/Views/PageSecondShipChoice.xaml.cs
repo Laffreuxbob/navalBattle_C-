@@ -62,7 +62,6 @@ namespace NavalBattle.Views
             Ship corvette = new Ship();
             corvette.Name = "Corvette";
             corvette.State = true;
-            corvette.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/corvette.jpg";
 
             // dimensions of the ship
             if (this.secondShipWidthTxt.Text == "" || this.secondShipWidthTxt.Text == "0")
@@ -114,6 +113,7 @@ namespace NavalBattle.Views
             listReturn.Quantity = quantity;
             listReturn.QuantityAlive = quantity;
             listReturn.DisplayString = listReturn.QuantityAlive + " " + corvette.Name + " alive";
+            listReturn.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/corvette.jpg";
             for (int i = 0; i < quantity; i++)
             {
                 corvetteList.Add(corvette);

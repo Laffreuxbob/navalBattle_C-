@@ -23,6 +23,7 @@ namespace NavalBattle.Models
         private int quantityAlive;
         private List<Ship> shipsList;
         private String displayString;
+        private String picturePath;
         #endregion
 
         #region Properties
@@ -48,6 +49,12 @@ namespace NavalBattle.Models
         {
             get { return displayString; }
             set { displayString = value; }
+        }
+
+        public String PicturePath
+        {
+            get { return picturePath; }
+            set { picturePath = value; }
         }
         #endregion
 

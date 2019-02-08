@@ -61,7 +61,6 @@ namespace NavalBattle.Views
             Ship cruiser = new Ship();
             cruiser.Name = "Cruiser";
             cruiser.State = true;
-            cruiser.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/cruiser.jpg";
 
             // dimensions of the ship
             if (this.thirdShipWidthTxt.Text == "" || this.thirdShipWidthTxt.Text == "0")
@@ -113,6 +112,7 @@ namespace NavalBattle.Views
             listReturn.Quantity = quantity;
             listReturn.QuantityAlive = quantity;
             listReturn.DisplayString = listReturn.QuantityAlive + " " + cruiser.Name + " alive";
+            listReturn.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/cruiser.jpg";
             for (int i = 0; i < quantity; i++)
             {
                 cruiserList.Add(cruiser);
