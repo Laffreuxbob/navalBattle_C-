@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -56,6 +56,11 @@ namespace NavalBattle.Views
         private void placementChoice_Click(object sender, RoutedEventArgs e)
         {
             (this.Parent as Window).Content = new PageGame();
+        }
+
+        private void returnChoice_Click(object sender, RoutedEventArgs e)
+        {
+            (this.Parent as Window).Content = new PageGamePlayer();
         }
         #endregion
         

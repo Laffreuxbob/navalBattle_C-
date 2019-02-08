@@ -17,12 +17,18 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Column="0" Grid.Row="0" TextWrapping="Wrap">Place your ships on the map</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center">Place your ships on the map</TextBlock>
+        <ListView Grid.Column="0" Grid.Row="2" Grid.RowSpan="3"></ListView>
         
-        <Grid x:Name="placementShips" Grid.Column="1" Grid.Row="0"/>
+        <Grid x:Name="placementShips" Grid.Column="1" Grid.Row="0" Grid.RowSpan="5"/>
 
-        <Button x:Name="placementStepBtn" Grid.Column="2" Grid.Row="0" Click="placementChoice_Click">Send configuration</Button>
+        <Button x:Name="placementStepBtn" Grid.Column="2" Grid.Row="1" Click="placementChoice_Click">Send configuration</Button>
+        <Button x:Name="returnBtn" Grid.Column="2" Grid.Row="3" Click="returnChoice_Click">Return to step 1</Button>
     </Grid>
 </Page>
