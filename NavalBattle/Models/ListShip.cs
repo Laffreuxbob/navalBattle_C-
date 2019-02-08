@@ -20,8 +20,9 @@ namespace NavalBattle.Models
 
         #region Attributs
         private int quantity;
+        private int quantityAlive;
         private List<Ship> shipsList;
-        private String chaine;
+        private String displayString;
         #endregion
 
         #region Properties
@@ -31,16 +32,22 @@ namespace NavalBattle.Models
             set { quantity = value; }
         }
 
+        public int QuantityAlive
+        {
+            get { return quantityAlive; }
+            set { quantityAlive = value; }
+        }
+
         public List<Ship> ShipsList
         {
             get { return shipsList; }
             set { shipsList = value; }
         }
 
-        public String Chaine
+        public String DisplayString
         {
-            get { return chaine; }
-            set { chaine = value; }
+            get { return displayString; }
+            set { displayString = value; }
         }
         #endregion
 

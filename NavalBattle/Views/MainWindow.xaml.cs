@@ -32,17 +32,27 @@ namespace NavalBattle.Views
         #endregion
 
         #region Variables
-        private List<Ship> list_ship_display;
-        private List<ListShip> placementPlayeur;
-        private List<ListShip> placementVersus;
-        private int quantity;
-        private List<Ship> maListe;
         #endregion
 
         #region Attributs
+        private List<ListShip> placementPlayer;
+        private List<ListShip> placementVersus;
         #endregion
 
         #region Properties
+
+        public List<ListShip> PlacementPlayer
+        {
+            get { return placementPlayer; }
+            set { placementPlayer = value; }
+        }
+
+        public List<ListShip> PlacementVersus
+        {
+            get { return placementVersus; }
+            set { placementVersus = value; }
+        }
+
         #endregion
 
         #region Constructors
@@ -57,7 +67,7 @@ namespace NavalBattle.Views
             GameManager mainGame = new GameManager();
             mainGame.Play();
             createBox();
-            /*list_ship_display = Ship.ShipCreation();
+            /*
             placementPlayeur.Clear();
             placementVersus.Clear();
             foreach (Ship item in list_ship_display)

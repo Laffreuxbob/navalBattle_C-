@@ -26,7 +26,7 @@ namespace NavalBattle.Models
         private int widthNbBox; // size of the ship
         private int heightNbBox; // size of the ship
         private Boolean state; // the ship is still alive ?
-        private int[][] positionShip; // position X,Y of each case of the ship
+        private int[,] positionShip; // position X,Y of each case of the ship
         private String picturePath; // path for the picture of the ship
         #endregion
 
@@ -62,7 +62,7 @@ namespace NavalBattle.Models
             set { state = value; }
         }
 
-        public int[][] PositionShip
+        public int[,] PositionShip
         {
             get { return positionShip; }
             set { positionShip = value; }
