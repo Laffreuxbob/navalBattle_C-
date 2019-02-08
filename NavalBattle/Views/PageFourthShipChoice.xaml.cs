@@ -123,6 +123,13 @@ namespace NavalBattle.Views
             (this.Parent as MainWindow).PlacementPlayer.Add(listReturn);
             (this.Parent as MainWindow).PlacementVersus.Add(listReturn);
 
+            /*foreach (var elem in )
+            {
+                // liste.Add(Type ship)
+            }*/
+            // lancement d'une méthode générant un placement aléatoire pour le player
+            // lancement d'une méthode générant un placement aléatoire pour le versus (elle accepte automatiquement)
+
             (this.Parent as Window).Content = new PageGridGame();
         }
         #endregion
