@@ -104,9 +104,18 @@ namespace NavalBattle.Views
                 {
                     quantity = -quantity;
                 }
+            }
 
-                // gestion de la quantity a finalisée
+            // quantity test
+            Boolean quantityTestReturn = false;
+            while (quantityTestReturn != true && quantity != 0)
+            {
+                quantityTestReturn = ListShip.quantityTest(quantity, submarine.WidthNbBox, submarine.HeightNbBox);
 
+                if (quantityTestReturn == false)
+                {
+                    quantity--;
+                }
             }
 
             listReturn.Quantity = quantity;

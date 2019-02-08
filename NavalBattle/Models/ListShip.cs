@@ -69,6 +69,19 @@ namespace NavalBattle.Models
         #endregion
 
         #region StaticFunctions
+        public static Boolean quantityTest(int quantity, int widthShip, int heightShip)
+        {
+            Boolean test_return = true;
+            int sizeMap = GameManager.HEIGHT_GAME * GameManager.WIDTH_GAME;
+            int sizeAllShip = quantity * widthShip * heightShip;
+
+            if (sizeMap < sizeAllShip)
+            {
+                test_return = false;
+            }
+
+            return test_return;
+        }
         #endregion
 
         #region Functions
