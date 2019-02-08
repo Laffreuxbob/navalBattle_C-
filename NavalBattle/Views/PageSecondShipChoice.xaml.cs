@@ -57,11 +57,14 @@ namespace NavalBattle.Views
         #region Events
         private void secondShipChoice_Click(object sender, RoutedEventArgs e)
         {
+            ListShip listReturn = new ListShip();
+            List<Ship> corvetteList = new List<Ship>();
             Ship corvette = new Ship();
             corvette.Name = "Corvette";
             corvette.State = true;
             corvette.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/corvette.jpg";
 
+            // dimensions of the ship
             if (this.secondShipWidthTxt.Text == "" || this.secondShipWidthTxt.Text == "0")
             {
                 corvette.WidthNbBox = 3;
@@ -75,7 +78,6 @@ namespace NavalBattle.Views
                 }
                 corvette.WidthNbBox = widthChoice;
             }
-
             if (this.secondShipHeightTxt.Text == "" || this.secondShipHeightTxt.Text == "0")
             {
                 corvette.HeightNbBox = 1;
@@ -87,11 +89,39 @@ namespace NavalBattle.Views
                 {
                     heightChoice = -heightChoice;
                 }
-                corvette.WidthNbBox = heightChoice;
+                corvette.HeightNbBox = heightChoice;
+            }
+            corvette.PositionShip = new int[corvette.WidthNbBox, corvette.HeightNbBox];
+
+            // number of ship
+            int quantity = 0;
+            if (this.secondShipQuantityTxt.Text == "" || this.secondShipQuantityTxt.Text == "0")
+            {
+                quantity = 1;
+            }
+            else
+            {
+                quantity = int.Parse(this.secondShipQuantityTxt.Text);
+                if (quantity < 0)
+                {
+                    quantity = -quantity;
+                }
+
+                // gestion de la quantity a finalisée
+
             }
 
-            // gestion de la quantity
-            // enregistrement du bateau dans une list epour affichage ?
+            listReturn.Quantity = quantity;
+            listReturn.QuantityAlive = quantity;
+            listReturn.DisplayString = listReturn.QuantityAlive + " " + corvette.Name + " alive";
+            for (int i = 0; i < quantity; i++)
+            {
+                corvetteList.Add(corvette);
+            }
+            listReturn.ShipsList = corvetteList;
+            
+            (this.Parent as MainWindow).PlacementPlayer.Add(listReturn);
+            (this.Parent as MainWindow).PlacementVersus.Add(listReturn);
 
             (this.Parent as Window).Content = new PageThirdShipChoice();
         }

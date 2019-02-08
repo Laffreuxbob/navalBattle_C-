@@ -56,11 +56,14 @@ namespace NavalBattle.Views
         #region Events
         private void thirdShipChoice_Click(object sender, RoutedEventArgs e)
         {
+            ListShip listReturn = new ListShip();
+            List<Ship> cruiserList = new List<Ship>();
             Ship cruiser = new Ship();
             cruiser.Name = "Cruiser";
             cruiser.State = true;
             cruiser.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/cruiser.jpg";
 
+            // dimensions of the ship
             if (this.thirdShipWidthTxt.Text == "" || this.thirdShipWidthTxt.Text == "0")
             {
                 cruiser.WidthNbBox = 4;
@@ -74,7 +77,6 @@ namespace NavalBattle.Views
                 }
                 cruiser.WidthNbBox = widthChoice;
             }
-
             if (this.thirdShipHeightTxt.Text == "" || this.thirdShipHeightTxt.Text == "0")
             {
                 cruiser.HeightNbBox = 1;
@@ -86,11 +88,39 @@ namespace NavalBattle.Views
                 {
                     heightChoice = -heightChoice;
                 }
-                cruiser.WidthNbBox = heightChoice;
+                cruiser.HeightNbBox = heightChoice;
+            }
+            cruiser.PositionShip = new int[cruiser.WidthNbBox, cruiser.HeightNbBox];
+
+            // number of ship
+            int quantity = 0;
+            if (this.thirdShipQuantityTxt.Text == "" || this.thirdShipQuantityTxt.Text == "0")
+            {
+                quantity = 1;
+            }
+            else
+            {
+                quantity = int.Parse(this.thirdShipQuantityTxt.Text);
+                if (quantity < 0)
+                {
+                    quantity = -quantity;
+                }
+
+                // gestion de la quantity a finalisée
+
             }
 
-            // gestion de la quantity
-            // enregistrement du bateau dans une list epour affichage ?
+            listReturn.Quantity = quantity;
+            listReturn.QuantityAlive = quantity;
+            listReturn.DisplayString = listReturn.QuantityAlive + " " + cruiser.Name + " alive";
+            for (int i = 0; i < quantity; i++)
+            {
+                cruiserList.Add(cruiser);
+            }
+            listReturn.ShipsList = cruiserList;
+
+            (this.Parent as MainWindow).PlacementPlayer.Add(listReturn);
+            (this.Parent as MainWindow).PlacementVersus.Add(listReturn);
 
             (this.Parent as Window).Content = new PageFourthShipChoice();
         }

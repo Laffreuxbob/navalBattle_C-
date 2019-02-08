@@ -57,14 +57,17 @@ namespace NavalBattle.Views
         #region Events
         private void fourthShipChoice_Click(object sender, RoutedEventArgs e)
         {
-            Ship corvette = new Ship();
-            corvette.Name = "Aircraft carrier";
-            corvette.State = true;
-            corvette.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/aircraft_carrier.jpg";
+            ListShip listReturn = new ListShip();
+            List<Ship> aircraftCarrierList = new List<Ship>();
+            Ship aircraftCarrier = new Ship();
+            aircraftCarrier.Name = "Aircraft carrier";
+            aircraftCarrier.State = true;
+            aircraftCarrier.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/aircraft_carrier.jpg";
 
+            // dimensions of the ship
             if (this.fourthShipWidthTxt.Text == "" || this.fourthShipWidthTxt.Text == "0")
             {
-                corvette.WidthNbBox = 4;
+                aircraftCarrier.WidthNbBox = 4;
             }
             else
             {
@@ -73,12 +76,11 @@ namespace NavalBattle.Views
                 {
                     widthChoice = -widthChoice;
                 }
-                corvette.WidthNbBox = widthChoice;
+                aircraftCarrier.WidthNbBox = widthChoice;
             }
-
             if (this.fourthShipHeightTxt.Text == "" || this.fourthShipHeightTxt.Text == "0")
             {
-                corvette.HeightNbBox = 2;
+                aircraftCarrier.HeightNbBox = 2;
             }
             else
             {
@@ -87,11 +89,39 @@ namespace NavalBattle.Views
                 {
                     heightChoice = -heightChoice;
                 }
-                corvette.WidthNbBox = heightChoice;
+                aircraftCarrier.HeightNbBox = heightChoice;
+            }
+            aircraftCarrier.PositionShip = new int[aircraftCarrier.WidthNbBox, aircraftCarrier.HeightNbBox];
+
+            // number of ship
+            int quantity = 0;
+            if (this.fourthShipQuantityTxt.Text == "" || this.fourthShipQuantityTxt.Text == "0")
+            {
+                quantity = 1;
+            }
+            else
+            {
+                quantity = int.Parse(this.fourthShipQuantityTxt.Text);
+                if (quantity < 0)
+                {
+                    quantity = -quantity;
+                }
+
+                // gestion de la quantity a finalisée
+
             }
 
-            // gestion de la quantity
-            // enregistrement du bateau dans une list epour affichage ?
+            listReturn.Quantity = quantity;
+            listReturn.QuantityAlive = quantity;
+            listReturn.DisplayString = listReturn.QuantityAlive + " " + aircraftCarrier.Name + " alive";
+            for (int i = 0; i < quantity; i++)
+            {
+                aircraftCarrierList.Add(aircraftCarrier);
+            }
+            listReturn.ShipsList = aircraftCarrierList;
+
+            (this.Parent as MainWindow).PlacementPlayer.Add(listReturn);
+            (this.Parent as MainWindow).PlacementVersus.Add(listReturn);
 
             (this.Parent as Window).Content = new PageGridGame();
         }
