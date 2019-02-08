@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace NavalBattle.Models
 {
@@ -23,7 +24,7 @@ namespace NavalBattle.Models
         private int quantityAlive;
         private List<Ship> shipsList;
         private String displayString;
-        private String picturePath;
+        private BitmapImage imagesource;
         #endregion
 
         #region Properties
@@ -51,10 +52,10 @@ namespace NavalBattle.Models
             set { displayString = value; }
         }
 
-        public String PicturePath
+        public BitmapImage ImageSource
         {
-            get { return picturePath; }
-            set { picturePath = value; }
+            get { return imagesource; }
+            set { imagesource = value; }
         }
         #endregion
 
@@ -69,6 +70,19 @@ namespace NavalBattle.Models
         #endregion
 
         #region StaticFunctions
+        public static Boolean quantityTest(int quantity, int widthShip, int heightShip)
+        {
+            Boolean test_return = true;
+            int sizeMap = GameManager.HEIGHT_GAME * GameManager.WIDTH_GAME;
+            int sizeAllShip = quantity * widthShip * heightShip;
+
+            if (sizeMap < sizeAllShip)
+            {
+                test_return = false;
+            }
+
+            return test_return;
+        }
         #endregion
 
         #region Functions

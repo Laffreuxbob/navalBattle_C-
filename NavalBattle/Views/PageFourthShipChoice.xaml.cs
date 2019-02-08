@@ -105,15 +105,24 @@ namespace NavalBattle.Views
                 {
                     quantity = -quantity;
                 }
+            }
 
-                // gestion de la quantity a finalisée
+            // quantity test
+            Boolean quantityTestReturn = false;
+            while (quantityTestReturn != true && quantity != 0)
+            {
+                quantityTestReturn = ListShip.quantityTest(quantity, aircraftCarrier.WidthNbBox, aircraftCarrier.HeightNbBox);
 
+                if (quantityTestReturn == false)
+                {
+                    quantity--;
+                }
             }
 
             listReturn.Quantity = quantity;
             listReturn.QuantityAlive = quantity;
             listReturn.DisplayString = listReturn.QuantityAlive + " " + aircraftCarrier.Name + " alive";
-            listReturn.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/aircraft_carrier.jpg";
+            listReturn.ImageSource = new BitmapImage(new Uri("pack://application:,,,/NavalBattle;component/Resources/aircraft_carrier.jpg"));
             for (int i = 0; i < quantity; i++)
             {
                 aircraftCarrierList.Add(aircraftCarrier);
@@ -123,20 +132,15 @@ namespace NavalBattle.Views
             (this.Parent as MainWindow).PlacementPlayer.Add(listReturn);
             (this.Parent as MainWindow).PlacementVersus.Add(listReturn);
 
-            // génération de l'afficahge des Views pour le joueur et pour l'ia (placement reprend l'idée de la structure)
-            foreach (var elem in (this.Parent as MainWindow).PlacementPlayer)
-            {
-                // elem.DisplayString
-            }
-            foreach (var elem in (this.Parent as MainWindow).PlacementVersus)
-            {
-                // elem.DisplayString
-            }
+            PageGridGame game = new PageGridGame();
+            game.PlacementShipsPlayer = (this.Parent as MainWindow).PlacementPlayer;
+            game.BindListviews();
 
-            // lancement d'une méthode générant un placement aléatoire pour le player
-            // lancement d'une méthode générant un placement aléatoire pour le versus (elle accepte automatiquement)
+            // generate random configuration of ships
+            game.placementAleatoire((this.Parent as MainWindow).PlacementPlayer);
+            game.placementAleatoire((this.Parent as MainWindow).PlacementVersus);
 
-            (this.Parent as Window).Content = new PageGridGame();
+            (this.Parent as Window).Content = game;
         }
         #endregion
 

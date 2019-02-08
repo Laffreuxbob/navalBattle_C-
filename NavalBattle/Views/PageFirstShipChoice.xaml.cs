@@ -104,15 +104,24 @@ namespace NavalBattle.Views
                 {
                     quantity = -quantity;
                 }
+            }
 
-                // gestion de la quantity a finalisée
+            // quantity test
+            Boolean quantityTestReturn = false;
+            while (quantityTestReturn != true && quantity != 0)
+            {
+                quantityTestReturn = ListShip.quantityTest(quantity, submarine.WidthNbBox, submarine.HeightNbBox);
 
+                if (quantityTestReturn == false)
+                {
+                    quantity--;
+                }
             }
 
             listReturn.Quantity = quantity;
             listReturn.QuantityAlive = quantity;
             listReturn.DisplayString = listReturn.QuantityAlive + " " + submarine.Name + " alive";
-            listReturn.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/submarine.jpg";
+            listReturn.ImageSource = new BitmapImage(new Uri("pack://application:,,,/NavalBattle;component/Resources/submarine.jpg"));
             for (int i = 0; i < quantity; i++)
             {
                 submarineList.Add(submarine);
