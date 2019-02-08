@@ -100,7 +100,7 @@ namespace NavalBattle.Views
             }
             else
             {
-                quantity = int.Parse(this.firstShipHeightTxt.Text);
+                quantity = int.Parse(this.firstShipQuantityTxt.Text);
                 if (quantity < 0)
                 {
                     quantity = -quantity;
