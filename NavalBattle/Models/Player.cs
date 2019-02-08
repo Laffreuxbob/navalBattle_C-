@@ -103,17 +103,31 @@ namespace NavalBattle.Models
         // Check if this player got at least one ship alive in his boat list
         public Boolean CheckWin(List<Box> list)
         {
-            foreach(Box box in this.list)
+            foreach(Box box in list)
             {
                 if (box.State.Equals(StateBox.ship))
                 {
                     this.Lose = false;
+                    
                     break;
                 }
-                this.lose = true;
-            }
-            return this.lose;
 
+                this.Lose = true;
+            }
+            if (this.Lose) {
+                System.Console.WriteLine(this.name + "Win ?  Yes, ggwp bro !");
+            }
+            else
+            {
+                System.Console.WriteLine(this.name + "Win ? Nope, try harder !");
+            }
+            return this.Lose;
+
+        }
+
+        public Box SelectBox(List<Box> list, int x, int y, int step)
+        {
+            return list[x + y * step];
         }
 
         #region Events

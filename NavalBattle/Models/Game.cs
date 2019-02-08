@@ -53,12 +53,28 @@ namespace NavalBattle.Models
         {
 
         }
+        public Game(System.Windows.Controls.TextBox playerNameTxt, System.Windows.Controls.TextBox mapWidthTxt)
+        {
+
+        }
+
+        public Game(String name, int width, int height)
+        {
+            this.Name = name;
+            this.Width = width;
+            this.Height = height;
+        }
         #endregion
 
         #region StaticFunctions
         #endregion
 
         #region Functions
+
+        public void ShowConsole()
+        {
+            System.Console.WriteLine("My game " + this.Name + " : " + this.Width + "*" + this.Height);
+        }
         #endregion
 
         #region Events

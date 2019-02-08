@@ -114,6 +114,10 @@ namespace NavalBattle.Models
         {
             return ("[" + this.xPos + "-" + this.yPos + "-" + this.state + "] ");
         }
+        public String StringBoxState()
+        {
+            return ("[" + this.state + "] ");
+        }
 
         // Display list in console
         public static void ShowListBoxConsole(List<Box> list)
@@ -125,8 +129,9 @@ namespace NavalBattle.Models
         }
 
         // Display list 1D in 2D in console
-        public static void ShowListBoxConsole_1Dto2D(List<Box> list, int step)
+        public static void ShowListBoxConsole_1Dto2D(List<Box> list, int step, Boolean paramsOnlyState)
         {
+            System.Console.WriteLine("----------NAVAL BATTLE----------");
             String tempoRow = "";
             for (int count = 0; count < list.Count; count++)
             {
@@ -135,9 +140,11 @@ namespace NavalBattle.Models
                     System.Console.WriteLine(tempoRow);
                     tempoRow = "";
                 }
-                tempoRow += list[count].StringBox();
+                tempoRow += paramsOnlyState ? list[count].StringBoxState() : list[count].StringBox();
             }
             System.Console.WriteLine(tempoRow);
+            System.Console.WriteLine("--------------------------------");
+
         }
 
 
