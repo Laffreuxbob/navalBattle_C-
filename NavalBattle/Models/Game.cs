@@ -60,7 +60,7 @@ namespace NavalBattle.Models
 
         public Game(String name, int width, int height)
         {
-            this.Name = name;
+            this.Name = name == "" ? "John117" : name;
             this.Width = width;
             this.Height = height;
         }
