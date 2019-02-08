@@ -75,8 +75,32 @@ namespace NavalBattle.Models
             player1.Show();
             player2.Show();
 
-            var list = Box.GenerateList(WIDTH_GAME, HEIGHT_GAME);
-            Box.ShowListBoxConsole_1Dto2D(list, HEIGHT_GAME);
+            Box shottedBox = new Box();
+
+            var game = new Game("Name", 4, 4);
+            var list = Box.GenerateList(game.Width, game.Height);
+            Box.ShowListBoxConsole_1Dto2D(list, game.Height, false);
+            // PLayer1 put ship in grid on mouse clic
+            this.GetBoxInListOnClick(player1, 2, 4, list);
+            Box.ShowListBoxConsole_1Dto2D(list, game.Height, true);
+            // Player2 shot graphical Box(2.2)
+            shottedBox = player2.SelectBox(list, 1, 1, game.Height);
+            this.GetShot(shottedBox);
+            this.UpdateList(list, shottedBox, game.Height);
+            Box.ShowListBoxConsole_1Dto2D(list, game.Height, true);
+            player2.CheckWin(list);
+
+            // Player2 shot graphical Box(2.2)
+            shottedBox = player2.SelectBox(list, 0, 2, game.Height);
+            this.GetShot(shottedBox);
+            this.UpdateList(list, shottedBox, game.Height);
+            Box.ShowListBoxConsole_1Dto2D(list, game.Height, true);
+
+            player2.CheckWin(list);
+
+
+
+
             GameManager.CreateGame();
 
             /*create 2 Players
@@ -107,6 +131,7 @@ namespace NavalBattle.Models
             Box box1 = new Box();
             box1.ShowBoxConsole();
             Box.GenerateList(HEIGHT_GAME, WIDTH_GAME);
+            
 
         }
 
@@ -137,7 +162,7 @@ namespace NavalBattle.Models
 
         }
 
-        public Box GetBoxInListOnClick(int x, int y, List<Box> list)
+        public Box GetBoxInListOnClick(Player player, int x, int y, List<Box> list)
         {
             /* 
              * (x,y) coordonnées du clic
@@ -145,9 +170,21 @@ namespace NavalBattle.Models
              *  
              */
             int key = WIDTH_GAME * (x - 1) + y;
-            return list[key];
-
+            Box returnBox = list[key];
             /* UPDATE BOX STATE */
+            this.getShip(returnBox);
+
+            list[key] = returnBox;
+
+            return returnBox;
+
+            
+        }
+
+        public List<Box> UpdateList(List<Box> list, Box box, int step)
+        {
+            list[box.XPos + box.YPos * step] = box;
+            return list;
         }
         #endregion
 
