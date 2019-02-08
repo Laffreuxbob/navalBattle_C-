@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NavalBattle.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -56,10 +57,42 @@ namespace NavalBattle.Views
         #region Events
         private void fourthShipChoice_Click(object sender, RoutedEventArgs e)
         {
-            /*foreach (var elem in )
+            Ship corvette = new Ship();
+            corvette.Name = "Aircraft carrier";
+            corvette.State = true;
+            corvette.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/aircraft_carrier.jpg";
+
+            if (this.fourthShipWidthTxt.Text == "" || this.fourthShipWidthTxt.Text == "0")
             {
-                // liste.Add(Type ship)
-            }*/
+                corvette.WidthNbBox = 4;
+            }
+            else
+            {
+                int widthChoice = int.Parse(this.fourthShipWidthTxt.Text);
+                if (widthChoice < 0)
+                {
+                    widthChoice = -widthChoice;
+                }
+                corvette.WidthNbBox = widthChoice;
+            }
+
+            if (this.fourthShipHeightTxt.Text == "" || this.fourthShipHeightTxt.Text == "0")
+            {
+                corvette.HeightNbBox = 2;
+            }
+            else
+            {
+                int heightChoice = int.Parse(this.fourthShipHeightTxt.Text);
+                if (heightChoice < 0)
+                {
+                    heightChoice = -heightChoice;
+                }
+                corvette.WidthNbBox = heightChoice;
+            }
+
+            // gestion de la quantity
+            // enregistrement du bateau dans une list epour affichage ?
+
             (this.Parent as Window).Content = new PageGridGame();
         }
         #endregion
