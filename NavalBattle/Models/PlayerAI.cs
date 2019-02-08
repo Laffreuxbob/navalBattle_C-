@@ -72,7 +72,7 @@ namespace NavalBattle.Models
 
 
         // Select a box according to the method of the PlayerAI.mode
-        private Box SelectBox(List<Box> list, int width, int height, int step)
+        private Box SelectBox_byAi(List<Box> list, int width, int height, int step)
         {
             switch (this.Mode)
             {
