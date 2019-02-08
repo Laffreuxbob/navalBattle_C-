@@ -56,14 +56,14 @@ namespace NavalBattle.UserControls
             System.Console.WriteLine("DRAWING MAP start");
             for (int i = 0; i < 5; i++)
             {
-                ColumnDefinition col1 = new ColumnDefinition();
-                this.graphicGrid.ColumnDefinitions.Add(col1);
+                ColumnDefinition col = new ColumnDefinition();
+                this.graphicGrid.ColumnDefinitions.Add(col);
             }
 
             for (int i = 0; i < 5; i++)
             {
-                RowDefinition row1 = new RowDefinition();
-                this.graphicGrid.RowDefinitions.Add(row1);
+                RowDefinition row = new RowDefinition();
+                this.graphicGrid.RowDefinitions.Add(row);
             }
 
             for (int i = 0; i < 5; i++)
