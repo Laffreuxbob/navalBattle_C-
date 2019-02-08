@@ -27,7 +27,6 @@ namespace NavalBattle.Models
         private int heightNbBox; // size of the ship
         private Boolean state; // the ship is still alive ?
         private int[,] positionShip; // position X,Y of each case of the ship
-        private String picturePath; // path for the picture of the ship
         #endregion
 
         #region Properties
@@ -67,12 +66,6 @@ namespace NavalBattle.Models
             get { return positionShip; }
             set { positionShip = value; }
         }
-
-        public String PicturePath
-        {
-            get { return picturePath; }
-            set { picturePath = value; }
-        }
         #endregion
 
         #region Constructors
@@ -84,13 +77,12 @@ namespace NavalBattle.Models
 
         }
 
-        public Ship(string name, int widthNbBox, int heightNbBox, Boolean state, String picturePath)
+        public Ship(string name, int widthNbBox, int heightNbBox, Boolean state)
         {
             this.name = name;
             this.widthNbBox = widthNbBox;
             this.heightNbBox = heightNbBox;
             this.state = state;
-            this.picturePath = picturePath;
         }
         #endregion
 
