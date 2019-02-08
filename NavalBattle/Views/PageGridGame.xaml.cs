@@ -48,9 +48,25 @@ namespace NavalBattle.Views
         #endregion
 
         #region StaticFunctions
-        public static List<ListShip> placementAleatoire(List<ListShip> content)
+        public static List<ListShip> placementAleatoire(List<ListShip> contentPlacement)
         {
             List<ListShip> returnTable = new List<ListShip>();
+            //returnTable.
+            Random rnd = new Random();
+            int heightMap = GameManager.HEIGHT_GAME;
+            int widthMap = GameManager.WIDTH_GAME;
+            int pointOrigin = 0;
+
+            foreach (var item in contentPlacement)
+            {
+                foreach (var elem in item.ShipsList)
+                {
+                    int xOrigin = rnd.Next(heightMap);
+                    int yOrigin = rnd.Next(widthMap);
+
+
+                }
+            }
 
             return returnTable;
         }
