@@ -43,7 +43,7 @@ namespace NavalBattle.UserControls
         public UserControlGraphicGrid()
         {
             InitializeComponent();
-            
+            this.draw();
         }
         #endregion
 
@@ -51,8 +51,39 @@ namespace NavalBattle.UserControls
         #endregion
 
         #region Functions
+        public void draw()
+        {
+            System.Console.WriteLine("DRAWING MAP start");
+            for (int i = 0; i < 5; i++)
+            {
+                ColumnDefinition col1 = new ColumnDefinition();
+                this.graphicGrid.ColumnDefinitions.Add(col1);
+            }
 
-        
+            for (int i = 0; i < 5; i++)
+            {
+                RowDefinition row1 = new RowDefinition();
+                this.graphicGrid.RowDefinitions.Add(row1);
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    UserControlGraphicBox box = new UserControlGraphicBox();
+                    box.X = i;
+                    box.Y = j;
+
+                    Grid.SetColumn(box, i);
+                    Grid.SetRow(box, j);
+
+                    this.graphicGrid.Children.Add(box);
+                }
+            }
+            System.Console.WriteLine("DRAWING MAP end");
+
+        }
+
         #endregion
 
         #region Events
