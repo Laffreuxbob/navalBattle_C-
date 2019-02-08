@@ -56,6 +56,10 @@ namespace NavalBattle.Views
         #region Events
         private void fourthShipChoice_Click(object sender, RoutedEventArgs e)
         {
+            /*foreach (var elem in )
+            {
+                // liste.Add(Type ship)
+            }*/
             (this.Parent as Window).Content = new PageGridGame();
         }
         #endregion

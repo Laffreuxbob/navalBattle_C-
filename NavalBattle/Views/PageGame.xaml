@@ -21,7 +21,7 @@
 
         <!-- Définition des volets de la page -->
         <ListView x:Name="playerShipsList" Margin="0"
-            Grid.Column="2" Grid.Row="1">
+            Grid.Column="0" Grid.Row="1">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Vertical"></StackPanel>
@@ -30,7 +30,8 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
-                        <TextBlock x:Name="shipDefinition" HorizontalAlignment="Left" TextWrapping="NoWrap" VerticalAlignment="Center" Padding="10,0,0,0"/>
+                        <Image x:Name="image" Stretch="Fill" Source="{Binding ImageSource}"></Image>
+                        <TextBlock x:Name="shipDefinition" Text="{Binding Data}" HorizontalAlignment="Left" TextWrapping="NoWrap" VerticalAlignment="Center" Padding="10,0,0,0"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -45,7 +46,8 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
-                        <TextBlock x:Name="shipDefinition" HorizontalAlignment="Left" TextWrapping="NoWrap" VerticalAlignment="Center" Padding="10,0,0,0"/>
+                        <Image x:Name="image" Stretch="Fill" Source="{Binding ImageSource}"></Image>
+                        <TextBlock x:Name="shipDefinition" Text="{Binding Data}" HorizontalAlignment="Left" TextWrapping="NoWrap" VerticalAlignment="Center" Padding="10,0,0,0"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

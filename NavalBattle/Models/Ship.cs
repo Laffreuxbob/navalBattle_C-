@@ -104,7 +104,7 @@ namespace NavalBattle.Models
             shipA.heightNbBox = 2;
             shipA.widthNbBox = 1;
             shipA.State = true;
-            shipA.PicturePath = "";
+            shipA.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/submarine.jpg";
             result.Add(shipA);
 
             Ship shipB = new Ship();
@@ -112,7 +112,7 @@ namespace NavalBattle.Models
             shipB.heightNbBox = 3;
             shipB.widthNbBox = 1;
             shipB.State = true;
-            shipB.PicturePath = "";
+            shipB.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/corvette.jpg";
             result.Add(shipB);
 
             Ship shipC = new Ship();
@@ -120,7 +120,7 @@ namespace NavalBattle.Models
             shipC.heightNbBox = 4;
             shipC.widthNbBox = 1;
             shipC.State = true;
-            shipC.PicturePath = "";
+            shipC.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/cruiser.jpg";
             result.Add(shipC);
 
             Ship shipD = new Ship();
@@ -128,7 +128,7 @@ namespace NavalBattle.Models
             shipD.heightNbBox = 4;
             shipD.widthNbBox = 2;
             shipD.State = true;
-            shipD.PicturePath = "";
+            shipD.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/aircraft_carrier.jpg";
             result.Add(shipD);
 
             return result;
