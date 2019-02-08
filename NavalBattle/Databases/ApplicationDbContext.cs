@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NavalBattle.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NavalBattle.Models;
 
-namespace NavalBattle.Databases
+namespace NavalBattle.Database
 {
     public class ApplicationDbContext : DbContext
     {
@@ -21,17 +22,17 @@ namespace NavalBattle.Databases
         #endregion
 
         #region Attributs
-        /*private DbSet<> myVar;
-
-        public DbSet<> MyProperty
-        {
-            get { return myVar; }
-            set { myVar = value; }
-        }*/
-
+        private Game newGame;
         #endregion
 
         #region Properties
+
+        private Game NewGame
+        {
+            get { return newGame; }
+            set { newGame = value; }
+        }
+
         #endregion
 
         #region Constructors
@@ -50,6 +51,11 @@ namespace NavalBattle.Databases
         #region Functions
         private void DevResetDatabase()
         {
+            if (false)
+            {
+                System.Console.WriteLine("dev reset db");
+            }
+            else
             if (!this.Database.CompatibleWithModel(false))
             {
                 this.Database.Delete();

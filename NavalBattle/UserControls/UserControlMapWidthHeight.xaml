@@ -49,7 +49,8 @@
             <TextBox x:Name="mapHeightTxt" Grid.Column="2" Grid.Row="5">10</TextBox>
             <TextBox x:Name="playerNameTxt" Grid.Column="2" Grid.Row="7">Commander Doe</TextBox>
 
-            <Button x:Name="firstStepBtn" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2" Click="parametersChoice_Click">Next step</Button>
+            <Button x:Name="saveNewGameDB" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2" Click="SaveNewGameDB">Save this game in DB</Button>
+            <Button x:Name="firstStepBtn" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="1" Click="parametersChoice_Click">Next step</Button>
         </Grid>
     </Grid>
 </UserControl>

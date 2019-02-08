@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using NavalBattle.Database;
 
 namespace NavalBattle.UserControls
 {
@@ -39,7 +40,7 @@ namespace NavalBattle.UserControls
         #endregion
 
         #region Properties
-            
+
         public int XWidth
         {
             get { return xWidth; }
@@ -86,6 +87,19 @@ namespace NavalBattle.UserControls
             System.Console.WriteLine(new PageFirstShipChoice());
             System.Console.WriteLine(playerNameTxt);
         }
+
+        private void SaveNewGameDB(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("SAVE DB");
+            using (var db = new ApplicationDbContext())
+            {
+                db.SaveChanges();
+                
+            }
+
+        }
+
+
         #endregion
 
 
