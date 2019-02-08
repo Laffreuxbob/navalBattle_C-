@@ -133,8 +133,9 @@ namespace NavalBattle.Views
                 // elem.DisplayString
             }
 
-            // lancement d'une méthode générant un placement aléatoire pour le player
-            // lancement d'une méthode générant un placement aléatoire pour le versus (elle accepte automatiquement)
+            // generate random configuration of ships
+            PageGridGame.placementAleatoire((this.Parent as MainWindow).PlacementPlayer);
+            PageGridGame.placementAleatoire((this.Parent as MainWindow).PlacementVersus);
 
             (this.Parent as Window).Content = new PageGridGame();
         }

@@ -1,3 +1,4 @@
+using NavalBattle.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +48,12 @@ namespace NavalBattle.Views
         #endregion
 
         #region StaticFunctions
+        public static List<ListShip> placementAleatoire(List<ListShip> content)
+        {
+            List<ListShip> returnTable = new List<ListShip>();
+
+            return returnTable;
+        }
         #endregion
 
         #region Functions
@@ -55,7 +62,7 @@ namespace NavalBattle.Views
         #region Events
         private void generateAnotherPlacement_Click(object sender, RoutedEventArgs e)
         {
-            // lancement d'une méthode générant un placement aléatoire
+            PageGridGame.placementAleatoire((this.Parent as MainWindow).PlacementPlayer);
         }
 
         private void placementChoice_Click(object sender, RoutedEventArgs e)
