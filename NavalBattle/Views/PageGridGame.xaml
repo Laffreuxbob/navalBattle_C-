@@ -24,7 +24,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center">Place your ships on the map</TextBlock>
-        <ListView Grid.Column="0" Grid.Row="2" Grid.RowSpan="3">
+        <ListView x:Name="playerShipList" Grid.Column="0" Grid.Row="2" Grid.RowSpan="3">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Vertical"></StackPanel>
@@ -33,8 +33,8 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
-                        <Image x:Name="image" Stretch="Fill" Source="{Binding ImageSource}"></Image>
-                        <TextBlock x:Name="shipDefinition" Text="{Binding Data}" HorizontalAlignment="Left" TextWrapping="NoWrap" VerticalAlignment="Center" Padding="10,0,0,0"/>
+                        <Image x:Name="image" Stretch="Fill" Source="{Binding PicturePath}"></Image>
+                        <TextBlock x:Name="shipDefinition" Text="{Binding DisplayString}" HorizontalAlignment="Left" TextWrapping="NoWrap" VerticalAlignment="Center" Padding="10,0,0,0"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

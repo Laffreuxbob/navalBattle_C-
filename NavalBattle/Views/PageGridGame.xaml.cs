@@ -1,6 +1,7 @@
 using NavalBattle.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,12 +30,21 @@ namespace NavalBattle.Views
         #endregion
 
         #region Variables
+        ObservableCollection<ListShip> viewPlayerShips = new ObservableCollection<ListShip>();
         #endregion
 
         #region Attributs
+        private List<ListShip> placementShipsPlayer;
         #endregion
 
         #region Properties
+
+        public List<ListShip> PlacementShipsPlayer
+        {
+            get { return placementShipsPlayer; }
+            set { placementShipsPlayer = value; }
+        }
+
         #endregion
 
         #region Constructors
@@ -44,11 +54,27 @@ namespace NavalBattle.Views
         public PageGridGame()
         {
             InitializeComponent();
+            this.DataContext = this;
+            //this.PlacementShipsPlayer = (this.Parent as MainWindow).PlacementPlayer;
+            //BindListviews();
         }
         #endregion
 
         #region StaticFunctions
-        public static List<ListShip> placementAleatoire(List<ListShip> contentPlacement)
+        #endregion
+
+        #region Functions
+        public void BindListviews()
+        {
+            foreach (var elem in this.PlacementShipsPlayer)
+            {
+                viewPlayerShips.Add(elem);
+            }
+
+            this.playerShipList.ItemsSource = viewPlayerShips;
+        }
+
+        public List<ListShip> placementAleatoire(List<ListShip> contentPlacement)
         {
             List<ListShip> returnTable = new List<ListShip>();
             //returnTable.
@@ -72,13 +98,10 @@ namespace NavalBattle.Views
         }
         #endregion
 
-        #region Functions
-        #endregion
-
         #region Events
         private void generateAnotherPlacement_Click(object sender, RoutedEventArgs e)
         {
-            PageGridGame.placementAleatoire((this.Parent as MainWindow).PlacementPlayer);
+            placementAleatoire((this.Parent as MainWindow).PlacementPlayer);
         }
 
         private void placementChoice_Click(object sender, RoutedEventArgs e)

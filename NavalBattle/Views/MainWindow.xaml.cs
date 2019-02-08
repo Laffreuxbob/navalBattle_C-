@@ -37,6 +37,8 @@ namespace NavalBattle.Views
         #region Attributs
         private List<ListShip> placementPlayer;
         private List<ListShip> placementVersus;
+        private ListShip viewPlacementPlayer;
+        private ListShip viewPlacementVersus;
         #endregion
 
         #region Properties
@@ -51,6 +53,18 @@ namespace NavalBattle.Views
         {
             get { return placementVersus; }
             set { placementVersus = value; }
+        }
+
+        public ListShip ViewPlacementPlayer
+        {
+            get { return viewPlacementPlayer; }
+            set { viewPlacementPlayer = value; }
+        }
+
+        public ListShip ViewPlacementVersus
+        {
+            get { return viewPlacementVersus; }
+            set { viewPlacementVersus = value; }
         }
 
         #endregion

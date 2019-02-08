@@ -132,21 +132,15 @@ namespace NavalBattle.Views
             (this.Parent as MainWindow).PlacementPlayer.Add(listReturn);
             (this.Parent as MainWindow).PlacementVersus.Add(listReturn);
 
-            // génération de l'afficahge des Views pour le joueur et pour l'ia (placement reprend l'idée de la structure)
-            foreach (var elem in (this.Parent as MainWindow).PlacementPlayer)
-            {
-                // elem.DisplayString
-            }
-            foreach (var elem in (this.Parent as MainWindow).PlacementVersus)
-            {
-                // elem.DisplayString
-            }
+            PageGridGame game = new PageGridGame();
+            game.PlacementShipsPlayer = (this.Parent as MainWindow).PlacementPlayer;
+            game.BindListviews();
 
             // generate random configuration of ships
-            PageGridGame.placementAleatoire((this.Parent as MainWindow).PlacementPlayer);
-            PageGridGame.placementAleatoire((this.Parent as MainWindow).PlacementVersus);
+            game.placementAleatoire((this.Parent as MainWindow).PlacementPlayer);
+            game.placementAleatoire((this.Parent as MainWindow).PlacementVersus);
 
-            (this.Parent as Window).Content = new PageGridGame();
+            (this.Parent as Window).Content = game;
         }
         #endregion
 
