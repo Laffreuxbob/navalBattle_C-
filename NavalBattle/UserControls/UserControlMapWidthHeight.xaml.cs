@@ -82,7 +82,11 @@ namespace NavalBattle.UserControls
             (((this.Parent as Grid).Parent as PageGamePlayer).Parent as Window).Content = new PageFirstShipChoice();
             //((this.Parent as Grid).Parent as PageGamePlayer).Content = new PageFirstShipChoice();
             //this.Content = new PageFirstShipChoice();
-            Game newGame = new Game(playerNameTxt.Text, int.Parse(mapWidthTxt.Text), int.Parse(mapHeightTxt.Text));
+
+            int size_width = sizetest(mapWidthTxt.Text);
+            int size_height = sizetest(mapHeightTxt.Text);
+            Game newGame = new Game(playerNameTxt.Text, size_width, size_height);
+
             newGame.ShowConsole();
             System.Console.WriteLine(new PageFirstShipChoice());
             System.Console.WriteLine(playerNameTxt);
@@ -98,6 +102,22 @@ namespace NavalBattle.UserControls
             }
 
         }
+
+        private int sizetest(String val)
+        {
+            if (val == "" || val == "0")
+            {
+                return 5; // default value
+            }
+            else
+            {
+                int size_width = int.Parse(val);
+
+                return size_width = Math.Abs(size_width);
+            }
+        }
+
+
 
 
         #endregion
