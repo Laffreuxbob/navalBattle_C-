@@ -122,7 +122,7 @@ namespace NavalBattle.Views
             listReturn.Quantity = quantity;
             listReturn.QuantityAlive = quantity;
             listReturn.DisplayString = listReturn.QuantityAlive + " " + aircraftCarrier.Name + " alive";
-            listReturn.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/aircraft_carrier.jpg";
+            listReturn.ImageSource = new BitmapImage(new Uri("pack://application:,,,/NavalBattle;component/Resources/aircraft_carrier.jpg"));
             for (int i = 0; i < quantity; i++)
             {
                 aircraftCarrierList.Add(aircraftCarrier);

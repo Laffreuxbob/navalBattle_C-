@@ -121,7 +121,7 @@ namespace NavalBattle.Views
             listReturn.Quantity = quantity;
             listReturn.QuantityAlive = quantity;
             listReturn.DisplayString = listReturn.QuantityAlive + " " + cruiser.Name + " alive";
-            listReturn.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/cruiser.jpg";
+            listReturn.ImageSource = new BitmapImage(new Uri("pack://application:,,,/NavalBattle;component/Resources/cruiser.jpg"));
             for (int i = 0; i < quantity; i++)
             {
                 cruiserList.Add(cruiser);

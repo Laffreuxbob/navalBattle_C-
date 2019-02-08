@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace NavalBattle.Models
 {
@@ -23,7 +24,7 @@ namespace NavalBattle.Models
         private int quantityAlive;
         private List<Ship> shipsList;
         private String displayString;
-        private String picturePath;
+        private BitmapImage imagesource;
         #endregion
 
         #region Properties
@@ -51,10 +52,10 @@ namespace NavalBattle.Models
             set { displayString = value; }
         }
 
-        public String PicturePath
+        public BitmapImage ImageSource
         {
-            get { return picturePath; }
-            set { picturePath = value; }
+            get { return imagesource; }
+            set { imagesource = value; }
         }
         #endregion
 

@@ -30,7 +30,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
-                        <Image x:Name="image" Stretch="Fill" Source="{Binding PicturePath}"></Image>
+                        <Image x:Name="image" Stretch="Fill" Source="{Binding ImageSource}"></Image>
                         <TextBlock x:Name="shipDefinition" Text="{Binding DisplayString}" HorizontalAlignment="Left" TextWrapping="NoWrap" VerticalAlignment="Center" Padding="10,0,0,0"/>
                     </StackPanel>
                 </DataTemplate>
@@ -46,7 +46,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
-                        <Image x:Name="image" Stretch="Fill" Source="{Binding PicturePath}"></Image>
+                        <Image x:Name="image" Stretch="Fill" Source="{Binding ImageSource}"></Image>
                         <TextBlock x:Name="shipDefinition" Text="{Binding DisplayString}" HorizontalAlignment="Left" TextWrapping="NoWrap" VerticalAlignment="Center" Padding="10,0,0,0"/>
                     </StackPanel>
                 </DataTemplate>

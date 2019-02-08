@@ -122,7 +122,7 @@ namespace NavalBattle.Views
             listReturn.Quantity = quantity;
             listReturn.QuantityAlive = quantity;
             listReturn.DisplayString = listReturn.QuantityAlive + " " + corvette.Name + " alive";
-            listReturn.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/corvette.jpg";
+            listReturn.ImageSource = new BitmapImage(new Uri("pack://application:,,,/NavalBattle;component/Resources/corvette.jpg"));
             for (int i = 0; i < quantity; i++)
             {
                 corvetteList.Add(corvette);
