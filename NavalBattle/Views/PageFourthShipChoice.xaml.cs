@@ -62,7 +62,6 @@ namespace NavalBattle.Views
             Ship aircraftCarrier = new Ship();
             aircraftCarrier.Name = "Aircraft carrier";
             aircraftCarrier.State = true;
-            aircraftCarrier.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/aircraft_carrier.jpg";
 
             // dimensions of the ship
             if (this.fourthShipWidthTxt.Text == "" || this.fourthShipWidthTxt.Text == "0")
@@ -114,6 +113,7 @@ namespace NavalBattle.Views
             listReturn.Quantity = quantity;
             listReturn.QuantityAlive = quantity;
             listReturn.DisplayString = listReturn.QuantityAlive + " " + aircraftCarrier.Name + " alive";
+            listReturn.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/aircraft_carrier.jpg";
             for (int i = 0; i < quantity; i++)
             {
                 aircraftCarrierList.Add(aircraftCarrier);
@@ -123,10 +123,16 @@ namespace NavalBattle.Views
             (this.Parent as MainWindow).PlacementPlayer.Add(listReturn);
             (this.Parent as MainWindow).PlacementVersus.Add(listReturn);
 
-            /*foreach (var elem in )
+            // génération de l'afficahge des Views pour le joueur et pour l'ia (placement reprend l'idée de la structure)
+            foreach (var elem in (this.Parent as MainWindow).PlacementPlayer)
             {
-                // liste.Add(Type ship)
-            }*/
+                // elem.DisplayString
+            }
+            foreach (var elem in (this.Parent as MainWindow).PlacementVersus)
+            {
+                // elem.DisplayString
+            }
+
             // lancement d'une méthode générant un placement aléatoire pour le player
             // lancement d'une méthode générant un placement aléatoire pour le versus (elle accepte automatiquement)
 

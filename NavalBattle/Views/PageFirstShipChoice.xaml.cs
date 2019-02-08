@@ -61,7 +61,6 @@ namespace NavalBattle.Views
             Ship submarine = new Ship();
             submarine.Name = "Submarine";
             submarine.State = true;
-            submarine.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/submarine.jpg";
 
             // dimensions of the ship
             if (this.firstShipWidthTxt.Text == "" || this.firstShipWidthTxt.Text == "0")
@@ -113,6 +112,7 @@ namespace NavalBattle.Views
             listReturn.Quantity = quantity;
             listReturn.QuantityAlive = quantity;
             listReturn.DisplayString = listReturn.QuantityAlive + " " + submarine.Name + " alive";
+            listReturn.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/submarine.jpg";
             for (int i = 0; i < quantity; i++)
             {
                 submarineList.Add(submarine);
