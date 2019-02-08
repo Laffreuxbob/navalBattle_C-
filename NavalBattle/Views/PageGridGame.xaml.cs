@@ -53,12 +53,14 @@ namespace NavalBattle.Views
         #endregion
 
         #region Events
+        private void generateAnotherPlacement_Click(object sender, RoutedEventArgs e)
+        {
+            // lancement d'une méthode générant un placement aléatoire
+        }
+
         private void placementChoice_Click(object sender, RoutedEventArgs e)
         {
-            /*foreach (var elem in )
-            {
-                // liste.Add(Type ship)
-            }*/
+            // sauvegarde bdd ici
 
             (this.Parent as Window).Content = new PageGame();
         }
