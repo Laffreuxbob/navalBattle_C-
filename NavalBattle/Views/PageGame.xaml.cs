@@ -1,5 +1,7 @@
-﻿using System;
+﻿using NavalBattle.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,12 +30,29 @@ namespace NavalBattle.Views
         #endregion
 
         #region Variables
+        ObservableCollection<ListShip> viewPlayerShips = new ObservableCollection<ListShip>();
+        ObservableCollection<ListShip> viewVersusShips = new ObservableCollection<ListShip>();
         #endregion
 
         #region Attributs
+        private List<ListShip> placementShipsPlayer;
+        private List<ListShip> placementShipsVersus;
         #endregion
 
         #region Properties
+
+        public List<ListShip> PlacementShipsPlayer
+        {
+            get { return placementShipsPlayer; }
+            set { placementShipsPlayer = value; }
+        }
+
+        public List<ListShip> PlacementShipsVersus
+        {
+            get { return placementShipsVersus; }
+            set { placementShipsVersus = value; }
+        }
+
         #endregion
 
         #region Constructors
@@ -43,6 +62,7 @@ namespace NavalBattle.Views
         public PageGame()
         {
             InitializeComponent();
+            this.DataContext = this;
         }
         #endregion
 
@@ -50,6 +70,20 @@ namespace NavalBattle.Views
         #endregion
 
         #region Functions
+        public void BindListviews()
+        {
+            foreach (var elem in this.PlacementShipsPlayer)
+            {
+                viewPlayerShips.Add(elem);
+            }
+            foreach (var elem in this.PlacementShipsVersus)
+            {
+                viewVersusShips.Add(elem);
+            }
+
+            this.playerShipsList.ItemsSource = viewPlayerShips;
+            this.versusShipsList.ItemsSource = viewVersusShips;
+        }
         #endregion
 
         #region Events

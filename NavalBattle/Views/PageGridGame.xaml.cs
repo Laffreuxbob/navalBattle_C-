@@ -108,7 +108,12 @@ namespace NavalBattle.Views
         {
             // sauvegarde bdd ici
 
-            (this.Parent as Window).Content = new PageGame();
+            PageGame game = new PageGame();
+            game.PlacementShipsPlayer = (this.Parent as MainWindow).PlacementPlayer;
+            game.PlacementShipsVersus = (this.Parent as MainWindow).PlacementVersus;
+            game.BindListviews();
+
+            (this.Parent as Window).Content = game;
         }
 
         private void returnChoice_Click(object sender, RoutedEventArgs e)
