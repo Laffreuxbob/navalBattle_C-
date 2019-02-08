@@ -1,3 +1,4 @@
+using NavalBattle.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,6 +56,42 @@ namespace NavalBattle.Views
         #region Events
         private void thirdShipChoice_Click(object sender, RoutedEventArgs e)
         {
+            Ship cruiser = new Ship();
+            cruiser.Name = "Cruiser";
+            cruiser.State = true;
+            cruiser.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/cruiser.jpg";
+
+            if (this.thirdShipWidthTxt.Text == "" || this.thirdShipWidthTxt.Text == "0")
+            {
+                cruiser.WidthNbBox = 4;
+            }
+            else
+            {
+                int widthChoice = int.Parse(this.thirdShipWidthTxt.Text);
+                if (widthChoice < 0)
+                {
+                    widthChoice = -widthChoice;
+                }
+                cruiser.WidthNbBox = widthChoice;
+            }
+
+            if (this.thirdShipHeightTxt.Text == "" || this.thirdShipHeightTxt.Text == "0")
+            {
+                cruiser.HeightNbBox = 1;
+            }
+            else
+            {
+                int heightChoice = int.Parse(this.thirdShipHeightTxt.Text);
+                if (heightChoice < 0)
+                {
+                    heightChoice = -heightChoice;
+                }
+                cruiser.WidthNbBox = heightChoice;
+            }
+
+            // gestion de la quantity
+            // enregistrement du bateau dans une list epour affichage ?
+
             (this.Parent as Window).Content = new PageFourthShipChoice();
         }
         #endregion

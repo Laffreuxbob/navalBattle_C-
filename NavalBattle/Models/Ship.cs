@@ -95,44 +95,6 @@ namespace NavalBattle.Models
         #endregion
 
         #region StaticFunctions
-        public static List<Ship> ShipCreation()
-        {
-            List<Ship> result = new List<Ship>();
-
-            Ship shipA = new Ship();
-            shipA.Name = "Submarine";
-            shipA.heightNbBox = 2;
-            shipA.widthNbBox = 1;
-            shipA.State = true;
-            shipA.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/submarine.jpg";
-            result.Add(shipA);
-
-            Ship shipB = new Ship();
-            shipB.Name = "Corvette";
-            shipB.heightNbBox = 3;
-            shipB.widthNbBox = 1;
-            shipB.State = true;
-            shipB.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/corvette.jpg";
-            result.Add(shipB);
-
-            Ship shipC = new Ship();
-            shipC.Name = "Cruiser";
-            shipC.heightNbBox = 4;
-            shipC.widthNbBox = 1;
-            shipC.State = true;
-            shipC.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/cruiser.jpg";
-            result.Add(shipC);
-
-            Ship shipD = new Ship();
-            shipD.Name = "Aircraft carrier";
-            shipD.heightNbBox = 4;
-            shipD.widthNbBox = 2;
-            shipD.State = true;
-            shipD.PicturePath = "pack://application:,,,/NavalBattle;component/Resources/aircraft_carrier.jpg";
-            result.Add(shipD);
-
-            return result;
-        }
         #endregion
 
         #region Functions
