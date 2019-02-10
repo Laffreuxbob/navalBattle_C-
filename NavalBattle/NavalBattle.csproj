@@ -62,6 +62,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UserControls\UserControlGraphicBox.xaml.cs">
+      <DependentUpon>UserControlGraphicBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlGraphicGrid.xaml.cs">
+      <DependentUpon>UserControlGraphicGrid.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlMapWidthHeight.xaml.cs">
       <DependentUpon>UserControlMapWidthHeight.xaml</DependentUpon>
     </Compile>
@@ -86,6 +92,14 @@
     <Compile Include="Views\PageGamePlayer.xaml.cs">
       <DependentUpon>PageGamePlayer.xaml</DependentUpon>
     </Compile>
+    <Page Include="UserControls\UserControlGraphicBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserControlGraphicGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\UserControlMapWidthHeight.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

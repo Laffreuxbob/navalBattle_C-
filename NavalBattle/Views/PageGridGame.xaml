@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:NavalBattle.Views"
+      xmlns:uc="clr-namespace:NavalBattle.UserControls"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PageGridGame">
@@ -39,10 +40,14 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        
+
         <Grid x:Name="placementShips" Grid.Column="1" Grid.Row="0" Grid.RowSpan="5"/>
 
         <Button x:Name="placementStepBtn" Grid.Column="2" Grid.Row="1" Click="placementChoice_Click">Send configuration</Button>
         <Button x:Name="returnBtn" Grid.Column="2" Grid.Row="3" Click="returnChoice_Click">Return to step 1</Button>
+
+        <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="3">
+            <uc:UserControlGraphicGrid></uc:UserControlGraphicGrid>
+        </Grid>
     </Grid>
 </Page>
